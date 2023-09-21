@@ -1,0 +1,11 @@
+.footer__propiedades{
+    display: flex;
+    flex-direction: column;
+    margin: 0 5rem 7rem 5rem;
+    align-items: center;
+}
+.footer__1{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}

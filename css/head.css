@@ -1,0 +1,37 @@
+.head__propiedades{
+    padding: 0 5rem;
+}
+.head__nav__tablet{
+    display: none;
+}
+.head .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    color:#464646;
+}
+.head__yo b{
+    color: rgb(141, 200, 85);
+}
+.head .container b {
+    font-weight: 700;
+}
+
+.head__nav{
+    display: flex;
+
+}
+
+.head__list{
+    padding-left: 1rem;
+    color:#464646;
+    transition: all 500ms;
+}
+.head__list:hover{
+    transform: scale(1.1);
+    color: rgb(141, 200, 85);
+}
+.head__list b:hover{
+    color: rgb(141, 200, 85);
+}
