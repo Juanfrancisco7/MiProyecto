@@ -1,1 +1,0 @@
-alert("BIEVENIDO A MI PAGINA WEB"); 
