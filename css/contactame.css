@@ -24,7 +24,7 @@
     margin-bottom: 1rem;
   }
   .input-container {
-    font-weight: 300;
+    font-weight: 200;
     position: relative;
     margin-bottom: 1rem;
     display: flex;
@@ -38,7 +38,7 @@
     border-bottom: 1px solid rgb(141, 200, 85);
     padding: 0rem 0rem 0rem;
     height: 3.25rem;
-    width: 100%;
+    width: 100%; 
   }
   
   .input::placeholder {
