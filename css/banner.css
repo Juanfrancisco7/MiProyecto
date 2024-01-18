@@ -11,9 +11,7 @@
     justify-content: end;
     gap: 4rem;
 }
-.banner__descripcion b{
-    color: rgb(141, 200, 85);
-}
+
 
 .banner__descripcion h1{
     font-weight: 700;

@@ -9,6 +9,7 @@
     text-align: center;
     padding-bottom: 7rem ;
     font-weight: bold;
+   color:  #464646;
 }
 .skills__nav{
     justify-content: space-between;
@@ -27,6 +28,7 @@
         text-align: center;
         padding-bottom: 7rem ;
         font-weight: bold;
+        color: #464646;
 }
 .hobbies__list{
     display: flex;

@@ -1,12 +1,7 @@
-/*.sobre-mi__fondo{
-    background: radial-gradient(circle, rgba(224,224,224,0.08167016806722693) 0%, rgba(0,0,0,1) 139%);
-}
-.sobre-mi{
-    background: url(https://i.imgur.com/5X4oZ9m.jpg) center / cover no-repeat;
-}*/
+
 .sobre-mi__propiedades{
     padding: 7rem 5rem;
-    color: #464646;
+    
    
 }
 .sobre-mi__descripcion{
@@ -18,9 +13,11 @@
 }
 .sobre-mi__descripcion h1{
     font-size: 3rem;
+    
+    
 }
 .sobre-mi__descripcion b{
-    color: rgb(141, 200, 85);
+    color: #464646;
 }
 .sobre-mi__descripcion__nav{
     width: 30%;
