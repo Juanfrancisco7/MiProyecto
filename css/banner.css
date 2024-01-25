@@ -1,13 +1,14 @@
 .banner__propiedades{
     display: flex;
     justify-content: space-between;
-    padding: 0 5rem;
+    padding: 0 6rem;
+    margin-bottom: -10rem;
 }
 .banner__descripcion{
 
     flex-direction: column;
     width: 55%;
-    padding: 1rem 0;
+    padding: 0rem 0;
     justify-content: end;
     gap: 4rem;
 }
