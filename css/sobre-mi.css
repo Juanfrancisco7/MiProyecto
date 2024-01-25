@@ -14,11 +14,14 @@
 }
 .sobre-mi__descripcion h1{
     font-size: 3rem;
-    
+    text-align: center;
+    font-weight: bold;
+   color:  #464646;
     
 }
 .sobre-mi__descripcion b{
     color: #464646;
+    font-weight: bold;
 }
 .sobre-mi__descripcion__nav{
     width: 30%;
