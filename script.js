@@ -56,14 +56,14 @@ const mensajesDeError = {
         valueMissing: "El campo nombre no puede estar vacio" 
     },
     email: { 
-        valueMissing: "El campo email no puede estar vacio",
-        typeMismatch: "El correo no es valido (Ejemplo@dominio.com) " 
+         valueMissing: "El campo email no puede estar vacio",
+         typeMismatch: "El correo no es valido (Ejemplo@dominio.com) " 
     },
     asunto: {
-        valueMissing: "El campo asunto no puede estar vacio"
+         valueMissing: "El campo asunto no puede estar vacio"
     },
     mensaje: {
-        valueMissing:"Este campo no puede estar vacio"
+         valueMissing:"Este campo no puede estar vacio"
     }
 }
 
