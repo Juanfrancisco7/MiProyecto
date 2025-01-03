@@ -1,48 +1,93 @@
-.banner__propiedades{
+.banner__propiedades {
     display: flex;
     justify-content: space-between;
     padding: 0 6rem;
     margin-bottom: -6rem;
 }
-.banner__descripcion{
 
+.banner__descripcion {
     flex-direction: column;
     width: 55%;
-    padding: 0rem 0;
+    padding: 0;
     justify-content: end;
     gap: 4rem;
 }
 
-
-.banner__descripcion h1{
+.banner__descripcion h1 {
     font-weight: 700;
     font-size: 3rem;
     line-height: 61px;
+    color: #333; /* Color de texto para el título */
 }
-.banner__descripcion__list{
+
+.banner__descripcion__list {
     padding-left: 0;
     padding-right: 1rem;
     font-weight: bold;
+    color: #555; /* Color de texto para los elementos de la lista */
 }
 
-.banner__descripcion__list li{
+.banner__descripcion__list li {
     display: flex;
     align-items: center;
     gap: 3px;
+    font-size: 1.1rem; /* Tamaño de fuente más legible */
 }
 
-.banner__descripcion__img{
+.banner__descripcion__img {
     width: 340px;
-    border-radius: 100%;
+    border-radius: 50%; /* Ronda la imagen */
     height: 350px;
-    
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    border: 2px solid #8dc853; /* Borde verde para la imagen */
 }
 
-.banner__descripcion__nav{
+.banner__descripcion__nav {
     display: flex;
     align-items: center;
     gap: 3px;
 }
-.link b{
-    color:rgb(141, 200, 85);
+
+.link b {
+    color: rgb(141, 200, 85); /* Color verde */
+}
+
+/* Estilo para los iconos de redes sociales en el header */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.social-icon img {
+    width: 25px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.1); /* Efecto de hover en los íconos */
+}
+
+/* Asegura que las redes sociales se alineen bien */
+.head__yo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.head__nav {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+}
+
+.head__list {
+    text-decoration: none;
+    color: black;
+}
+
+.head__nav__tablet {
+    display: none;
 }
