@@ -32,16 +32,16 @@
 }
 
 .experiencia__container__img:hover {
-    transform: scale(2.5); /* La imagen se agranda */
+    transform: scale(2.0); /* La imagen se agranda */
     z-index: 2;
 }
 
 .experiencia__container__img:first-child:hover {
-    transform: scale(2.5) translateX(20%); /* La imagen de la izquierda se expande hacia la derecha */
+    transform: scale(2.0) translateX(20%); /* La imagen de la izquierda se expande hacia la derecha */
 }
 
 .experiencia__container__img:last-child:hover {
-    transform: scale(2.5) translateX(-20%); /* La imagen de la derecha se expande hacia la izquierda */
+    transform: scale(2.0) translateX(-20%); /* La imagen de la derecha se expande hacia la izquierda */
 }
 
 @media (max-width: 768px) {
