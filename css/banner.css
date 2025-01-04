@@ -16,7 +16,8 @@
 .banner__descripcion h1 {
     font-weight: 700;
     font-size: 3rem;
-    line-height: 61px;
+    line-height: 30px;
+    margin-top: -5rem;
     color: #333; /* Color de texto para el título */
 }
 
