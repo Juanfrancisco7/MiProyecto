@@ -81,11 +81,16 @@
     display: flex;
     gap: 2rem;
     margin-left: auto;
+    display: flex;
+    gap: 5rem; /* Espaciado horizontal entre los enlaces */
+
 }
 
 .head__list {
     text-decoration: none;
     color: black;
+    margin: 1rem 0;
+    
 }
 
 .head__nav__tablet {
