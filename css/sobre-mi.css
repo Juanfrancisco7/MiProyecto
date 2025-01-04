@@ -10,8 +10,8 @@
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    text-align: center; /* Centra el texto */
-    margin: 0 auto; /* Centra el bloque de texto */
+    text-align: left; /* Alineamos el texto a la izquierda */
+    margin: 0 auto; /* Centra el bloque de texto en la página */
 }
 
 .sobre-mi__descripcion h1 {
@@ -36,9 +36,13 @@
 }
 
 .sobre-mi__descripcion p {
-    line-height: 18.78px;
-    margin: 0 auto; /* Centra el párrafo */
-    max-width: 900px; /* Limita el ancho máximo del texto para evitar que se vea demasiado largo */
+    font-size: 1.2rem; /* Aumenté el tamaño de la fuente */
+    line-height: 1.8; /* Mayor espacio entre líneas para facilitar la lectura */
+    margin-left: 0; /* Elimina cualquier margen izquierdo para acercarlo más a la izquierda */
+    margin-right: auto; /* Hace que el texto se mantenga alineado a la izquierda */
+    max-width: 100%; /* Asegura que el texto ocupe todo el espacio disponible */
+    color: #555; /* Color gris claro para el texto */
+    font-weight: 400; /* Peso de la fuente más ligera */
 }
 
 /* Enlaces destacados */
