@@ -16,7 +16,7 @@
 
 .banner__descripcion h1 {
     font-weight: 700;
-    font-size: 3.5rem; /* Aumenté el tamaño del texto */
+    font-size: 2.5rem; /* Aumenté el tamaño del texto */
     line-height: 30px;
     margin-top: 0; /* Eliminado margen superior adicional */
     margin-bottom: 1rem; /* Un pequeño margen para separar del siguiente texto */
@@ -104,3 +104,6 @@
 .head__nav__tablet {
     display: none;
 }
+
+
+
