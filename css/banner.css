@@ -2,23 +2,32 @@
     display: flex;
     justify-content: space-between;
     padding: 0 6rem;
-    margin-bottom: -6rem;
+    margin-bottom: -4rem; /* Ajusta para que la sección esté más cerca de la línea */
 }
 
 .banner__descripcion {
     flex-direction: column;
     width: 55%;
     padding: 0;
-    justify-content: end;
-    gap: 4rem;
+    justify-content: flex-start; /* Alineación desde la parte superior */
+    gap: 2rem; /* Aumento el espacio entre los elementos */
+    margin-top: -2rem; /* Ajusta la posición hacia arriba */
 }
 
 .banner__descripcion h1 {
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 3.5rem; /* Aumenté el tamaño del texto */
     line-height: 30px;
-    margin-top: -5rem;
-    color: #333; /* Color de texto para el título */
+    margin-top: 0; /* Eliminado margen superior adicional */
+    margin-bottom: 1rem; /* Un pequeño margen para separar del siguiente texto */
+    color: #333; /* Color de texto */
+}
+
+.banner__descripcion p {
+    font-size: 1.25rem; /* Aumenté el tamaño de la fuente */
+    line-height: 1.6; /* Mayor espacio entre líneas para mejorar la legibilidad */
+    color: #333; /* Asegura que el color sea consistente y legible */
+    font-weight: 400; /* Ajusta el peso para mayor claridad */
 }
 
 .banner__descripcion__list {
@@ -84,14 +93,12 @@
     margin-left: auto;
     display: flex;
     gap: 5rem; /* Espaciado horizontal entre los enlaces */
-
 }
 
 .head__list {
     text-decoration: none;
     color: black;
     margin: 1rem 0;
-    
 }
 
 .head__nav__tablet {
