@@ -70,16 +70,33 @@
   animation: slideInRight 1s ease-out;
 }
 
+/* Tamaño y estilo de los iconos sociales */
 .social-icon img,
 .social-icon i {
-  width: 25px;
-  height: auto;
+  width: 30px; /* Tamaño de los iconos igual para todos */
+  height: 30px; /* Aseguramos que todos los iconos tengan el mismo tamaño */
+  object-fit: contain;
   transition: transform 0.3s ease;
 }
 
-.social-icon img:hover,
-.social-icon i:hover {
-  transform: scale(1.1); /* Efecto de hover */
+/* Estilo para el icono de PayPal */
+.paypal-icon {
+  width: 30px; /* Aseguramos que tenga el mismo tamaño que los demás iconos */
+  height: 30px;
+  object-fit: contain;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto hover para el icono de PayPal */
+.social-icon:hover .paypal-icon {
+  transform: scale(1.1); /* Efecto de zoom cuando el usuario pasa el ratón */
+}
+
+/* Efecto hover en los otros iconos */
+.social-icon:hover img,
+.social-icon:hover i {
+  transform: scale(1.1); /* Efecto de zoom al pasar el cursor sobre otros iconos */
 }
 
 /* Animaciones */
