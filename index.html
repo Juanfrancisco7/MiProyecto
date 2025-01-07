@@ -38,6 +38,10 @@ rel="stylesheet">
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T2NZ5W17Z8"></script>
 <script>
+  // Inicializa EmailJS con tu public key
+  emailjs.init("MozjG_1EF6MduDcEx"); 
+</script>
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -47,6 +51,26 @@ rel="stylesheet">
 <!--Emailreceptor-->
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  // Inicializa EmailJS con tu public key
+  emailjs.init("MozjG_1EF6MduDcEx"); 
+</script>
+<!-- Aquí va el código para el envío del formulario -->
+<script>
+  document.querySelector("#miFormulario").addEventListener("submit", function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe normalmente
+
+    // Aquí enviamos el formulario usando EmailJS
+    emailjs.sendForm("service_1fd29qg", "template_lhkn88h", this)
+      .then(function(response) {
+        console.log('Mensaje enviado', response);
+        // Puedes agregar una notificación para el usuario aquí si quieres
+      }, function(error) {
+        console.error('Error al enviar el mensaje', error);
+        // Aquí también puedes agregar un mensaje de error para el usuario
+      });
+  });
+</script>
 
 
 </head>
