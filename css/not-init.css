@@ -147,7 +147,7 @@
 #contador {
   font-size: 12px; /* Reducido */
   margin-top: 10px;
-  animation: contadorAnimado 5s ease-out forwards;
+  animation: contadorAnimado 2s ease-out forwards;
 }
 
 /* Animación del contador */
