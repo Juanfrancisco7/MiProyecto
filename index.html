@@ -291,43 +291,6 @@ rel="stylesheet">
   </div>
 </section>
 
-<!-- Script para EmailJS -->
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  // Inicializa EmailJS con tu usuario
-  emailjs.init("MozjG_1EF6MduDcEx");
-
-  // Función para manejar el envío del formulario
-  document.getElementById("miFormulario").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
-
-    // Obtención de los datos del formulario
-    var nombre = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var asunto = document.getElementById("asunto").value;
-    var mensaje = document.getElementById("mensaje").value;
-
-    // Parámetros para el template de EmailJS
-    var templateParams = {
-      asunto: asunto,
-      mensaje: mensaje,
-      name: nombre,
-      email: email
-    };
-
-    // Enviar el correo usando EmailJS
-    emailjs.send("service_1fd29qg", "template_lhkn88h", templateParams)
-      .then(function(response) {
-        alert("Mensaje enviado con éxito");
-        document.getElementById("miFormulario").reset(); // Limpiar el formulario
-      }, function(error) {
-        alert("Error al enviar el mensaje. Inténtalo de nuevo.");
-      });
-  });
-</script>
-
-
-
 <!------------Footer------------>
 <footer class="footer">
   <div class="footer__container">
