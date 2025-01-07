@@ -1,75 +1,191 @@
 /* Estilo para el mensaje de donación */
 .mensaje-donacion {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #007bff; /* Azul */
-    color: white;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    z-index: 1000;
-    width: 80%;
-    max-width: 600px;
-    font-size: 18px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #007bff; /* Fondo azul */
+  color: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  z-index: 1000;
+  width: 80%;
+  max-width: 600px;
+  font-size: 20px;
+  animation: mensajeAnimado 5s ease-out, fadeIn 5s ease-out forwards;
+  box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Esto asegura que el texto no se desborde */
+}
+
+/* Animación de entrada para el mensaje */
+@keyframes mensajeAnimado {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
   }
-  
-  .mensaje-donacion h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  30% {
+    transform: translate(-50%, -60%) scale(1.1);
+    opacity: 0.5;
   }
-  
-  .paypal-container {
-    margin: 20px 0;
+  50% {
+    transform: translate(-50%, -40%) scale(1.05);
+    opacity: 0.8;
   }
-  
-  .paypal-logo {
-    width: 150px;
-    height: auto;
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
   }
-  
-  .continuar-btn {
-    background-color: #28a745; /* Verde */
-    color: white;
-    font-size: 18px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+}
+
+/* Fondo con gradiente suave */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  .continuar-btn:hover {
-    background-color: #218838; /* Color verde oscuro al pasar el ratón */
+  100% {
+    opacity: 1;
   }
-  
-  #contador {
-    font-size: 16px;
-    margin-top: 15px;
+}
+
+/* Animación de fade-in para el h2 (texto completo) */
+.mensaje-donacion h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  opacity: 0;
+  animation: fadeInTexto 2s ease-out forwards;
+  display: block; /* Asegura que el texto se muestre completo */
+}
+
+/* Animación para que el texto completo se muestre en 2 segundos */
+@keyframes fadeInTexto {
+  0% {
+    opacity: 0;
   }
-  
-  /* Estilo para la notificación de recarga */
-  .notificacion-recarga {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #ff9800;
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    z-index: 1000;
-    animation: fadein 0.5s, fadeout 0.5s 7.5s;
+  100% {
+    opacity: 1;
   }
-  
-  @keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1; }
+}
+
+/* Estilos para la palabra MundoJuan que será clicable */
+.mundojuan-link {
+  font-weight: bold;
+  font-size: 26px;
+  color: #FFDD00; /* Color brillante */
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 2px solid #FFDD00;
+  transition: all 0.3s ease;
+}
+
+.mundojuan-link:hover {
+  color: #ffffff; /* Cambiar color al pasar el ratón */
+  border-bottom: 2px solid #ffffff;
+}
+
+/* Animación para las imágenes de PayPal (más pequeñas y entrando desde la izquierda) */
+.paypal-container {
+  margin: 30px 0;
+  animation: imagenPayPalAnimada 5s ease-out forwards;
+}
+
+@keyframes imagenPayPalAnimada {
+  0% {
+    transform: translateX(-300px) scale(0);
+    opacity: 0;
   }
-  
-  @keyframes fadeout {
-    from { opacity: 1; }
-    to { opacity: 0; }
+  50% {
+    transform: translateX(50px) scale(0.8);
+    opacity: 0.6;
   }
+  100% {
+    transform: translateX(0) scale(0.7);
+    opacity: 1;
+  }
+}
+
+.paypal-logo {
+  width: 120px; /* Reducido */
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+/* Estilo del botón "Continuar" */
+.continuar-btn {
+  background-color: #28a745; /* Verde */
+  color: white;
+  font-size: 22px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: botonAnimado 5s ease-out forwards;
+}
+
+@keyframes botonAnimado {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.continuar-btn:hover {
+  background-color: #218838;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Contador de redirección */
+#contador {
+  font-size: 20px;
+  margin-top: 15px;
+  animation: contadorAnimado 5s ease-out forwards;
+}
+
+/* Animación del contador */
+@keyframes contadorAnimado {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Efecto de aparición de la notificación de recarga */
+.notificacion-recarga {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #ff9800;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+  animation: fadein 0.5s, fadeout 0.5s 7.5s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
   
