@@ -99,8 +99,17 @@
 
 /* Animación de AOS */
 [data-aos] {
-    opacity: 1 !important; /* Se hace visible cuando la animación se activa */
-}
+    opacity: 0; /* Los elementos comienzan invisibles */
+    transform: translateY(30px); /* Los elementos están desplazados hacia abajo */
+    transition-property: transform, opacity; /* Transición de transformaciones y opacidad */
+    transition-duration: 0.7s; /* Duración de la transición */
+  }
+  
+  /* Esto será animado por AOS cuando el elemento entre en el viewport */
+[data-aos].aos-animate {
+    opacity: 1; /* Se vuelve visible */
+    transform: translateY(0); /* Se mueve a su posición original */
+  }
 
 [data-aos="fade-up"] {
     animation: fadeUp 1s ease-in-out;
