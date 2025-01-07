@@ -30,12 +30,19 @@
     height: auto;
     border-radius: 10px;
     box-shadow: 12px 18px 34px 1px #464646;
-    transition: transform 0.3s ease-in-out, opacity 0.5s ease;
+    transition: transform 0.3s ease-in-out, opacity 2s ease-in-out;
     transform-origin: center center;
     opacity: 0; /* Inicialmente invisibles */
+    transform: scale(0.8); /* Reducimos el tamaño al principio */
 }
 
 /* Efecto de expansión y aparición de las imágenes */
+.experiencia__container__img.visible {
+    opacity: 1; /* La imagen se vuelve visible */
+    transform: scale(1); /* La imagen vuelve a su tamaño original */
+}
+
+/* Efecto de expansión en hover */
 .experiencia__container__img:hover {
     transform: scale(2.0); /* La imagen se agranda */
     z-index: 2;
@@ -53,7 +60,7 @@
 
 /* Animaciones AOS */
 [data-aos="zoom-in"] {
-    animation: zoomIn 1s ease-out;
+    animation: zoomIn 2s ease-out; /* Hacer la animación más lenta */
     opacity: 1 !important;
 }
 
@@ -79,6 +86,5 @@
         width: 80%; /* Reduce el tamaño de las imágenes en pantallas pequeñas */
     }
 }
-
 
 
