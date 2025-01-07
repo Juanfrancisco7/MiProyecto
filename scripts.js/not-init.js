@@ -25,7 +25,7 @@ function mostrarMensajeDonacion() {
   let countdown = 20;
   const contadorElem = document.getElementById('contador');
   const intervalo = setInterval(() => {
-    contadorElem.innerText = `Redirigiendo en ${countdown--} segundos...`;
+    contadorElem.innerText = ` ${countdown--}`;
     if (countdown < 0) {
       clearInterval(intervalo);
       mensajeDonacion.remove(); // Eliminar el mensaje de donación si se agota el tiempo
