@@ -262,28 +262,40 @@ rel="stylesheet">
       <h1 class="contactame__contenido__title">Contacto</h1>
       <form class="contactame__formulario" id="miFormulario">
         <fieldset>
+          <!-- Campo Nombre -->
           <div class="input-container">
-            <input name="name" id="name" class="input" type="text" placeholder="" minlength="5" maxlength="50" required>
-            <label class="input-label" for="name">Nombre</label>
+            <input name="from_name" id="from_name" class="input" type="text" placeholder=" " minlength="5" maxlength="50" required>
+            <label class="input-label" for="from_name">Nombre</label>
           </div>
+          
+          <!-- Campo Email -->
           <div class="input-container">
-            <input name="email" id="email" class="input" type="email" placeholder="" required>
+            <input name="email" id="email" class="input" type="email" placeholder=" " required>
             <label class="input-label" for="email">Email</label>
           </div>
+
+          <!-- Campo Asunto -->
           <div class="input-container">
-            <input name="asunto" id="asunto" class="input" type="text" placeholder="" required>
+            <input name="asunto" id="asunto" class="input" type="text" placeholder=" " required>
             <label class="input-label" for="asunto">Asunto</label>
           </div>
+
+          <!-- Campo Mensaje -->
           <div class="textarea-container">
-            <textarea name="mensaje" id="mensaje" class="textarea" placeholder="" required></textarea>
+            <textarea name="mensaje" id="mensaje" class="textarea" placeholder=" " required></textarea>
             <label class="textarea-label" for="mensaje">Mensaje</label>
           </div>
+
+          <!-- Checkbox Aceptación -->
           <div class="form-group">
             <input type="checkbox" required> Acepto la política de privacidad
           </div>
+
           <br>
+
+          <!-- Botón de Enviar -->
           <div class="btn__enviar">
-            <button class="btn btn-enviar btn-demo" type="submit">Enviar mensaje</button>
+            <button class="btn btn-enviar btn-demo" type="submit" id="button">Enviar mensaje</button>
           </div>
         </fieldset>
       </form>
@@ -291,47 +303,38 @@ rel="stylesheet">
   </div>
 </section>
 
-<script>document.getElementById("miFormulario").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+<!-- Script para EmailJS -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  // Inicializa EmailJS con tu usuario
+  emailjs.init("MozjG_1EF6MduDcEx");  // Reemplaza con tu User ID de EmailJS
 
-  // Validación manual si es necesario
-  if (!document.getElementById("name").value || 
-      !document.getElementById("email").value || 
-      !document.getElementById("asunto").value || 
-      !document.getElementById("mensaje").value) {
-    alert("Por favor completa todos los campos.");
-    return; // Detener la ejecución si hay campos vacíos
-  }
+  // Función para manejar el envío del formulario
+  document.getElementById("miFormulario").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
 
-  // Obtención de los datos del formulario
-  var nombre = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var asunto = document.getElementById("asunto").value;
-  var mensaje = document.getElementById("mensaje").value;
+    // Cambiar el texto del botón para indicar que se está enviando
+    const btn = document.getElementById('button');
+    btn.value = 'Enviando...';
 
-  // Parámetros para el template de EmailJS
-  var templateParams = {
-    asunto: asunto,
-    mensaje: mensaje,
-    name: nombre,
-    email: email
-  };
+    // Enviar el formulario a través de EmailJS
+    const serviceID = 'service_1fd29qg';  // Tu Service ID de EmailJS
+    const templateID = 'template_lhkn88h';  // Tu Template ID de EmailJS
 
-  // Mostrar los parámetros antes de enviar
-  console.log(templateParams);
-
-  // Enviar el correo usando EmailJS
-  emailjs.send("service_1fd29qg", "template_lhkn88h", templateParams)
-    .then(function(response) {
-      console.log("Mensaje enviado con éxito", response);
-      alert("Mensaje enviado con éxito");
-      document.getElementById("miFormulario").reset(); // Limpiar el formulario
-    }, function(error) {
-      console.log("Error al enviar el mensaje", error);
-      alert("Error al enviar el mensaje. Inténtalo de nuevo.");
-    });
-});
+    emailjs.sendForm(serviceID, templateID, this)
+      .then(function(response) {
+        console.log("Mensaje enviado con éxito", response);
+        alert("Mensaje enviado con éxito");
+        document.getElementById("miFormulario").reset(); // Limpiar el formulario
+        btn.value = 'Enviar mensaje';  // Restaurar el texto del botón
+      }, function(error) {
+        console.log("Error al enviar el mensaje", error);
+        alert("Error al enviar el mensaje. Inténtalo de nuevo.");
+        btn.value = 'Enviar mensaje';  // Restaurar el texto del botón
+      });
+  });
 </script>
+
 
 <!------------Footer------------>
 <footer class="footer">
