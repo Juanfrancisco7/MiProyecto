@@ -6,16 +6,16 @@
   transform: translate(-50%, -50%);
   background-color: #007bff; /* Fondo azul */
   color: white;
-  padding: 40px;
-  border-radius: 20px;
+  padding: 15px; /* Reducido */
+  border-radius: 12px; /* Más pequeño */
   text-align: center;
   z-index: 1000;
-  width: 80%;
-  max-width: 600px;
-  font-size: 20px;
+  width: 75%; /* Reducido */
+  max-width: 400px;  /* Reducido */
+  font-size: 14px; /* Texto más pequeño */
   animation: mensajeAnimado 5s ease-out, fadeIn 5s ease-out forwards;
-  box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.2);
-  overflow: hidden; /* Esto asegura que el texto no se desborde */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 /* Animación de entrada para el mensaje */
@@ -50,11 +50,11 @@
 
 /* Animación de fade-in para el h2 (texto completo) */
 .mensaje-donacion h2 {
-  font-size: 24px;
-  margin-bottom: 30px;
+  font-size: 12px; /* Reducido */
+  margin-bottom: 15px;
   opacity: 0;
   animation: fadeInTexto 2s ease-out forwards;
-  display: block; /* Asegura que el texto se muestre completo */
+  display: block;
 }
 
 /* Animación para que el texto completo se muestre en 2 segundos */
@@ -70,22 +70,22 @@
 /* Estilos para la palabra MundoJuan que será clicable */
 .mundojuan-link {
   font-weight: bold;
-  font-size: 26px;
+  font-size: 16px;  /* Reducido */
   color: #FFDD00; /* Color brillante */
   text-transform: uppercase;
   text-decoration: none;
-  border-bottom: 2px solid #FFDD00;
+  border-bottom: 1px solid #FFDD00;
   transition: all 0.3s ease;
 }
 
 .mundojuan-link:hover {
-  color: #ffffff; /* Cambiar color al pasar el ratón */
-  border-bottom: 2px solid #ffffff;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 
 /* Animación para las imágenes de PayPal (más pequeñas y entrando desde la izquierda) */
 .paypal-container {
-  margin: 30px 0;
+  margin: 15px 0;
   animation: imagenPayPalAnimada 5s ease-out forwards;
 }
 
@@ -95,19 +95,19 @@
     opacity: 0;
   }
   50% {
-    transform: translateX(50px) scale(0.8);
+    transform: translateX(50px) scale(0.6); /* Más pequeño */
     opacity: 0.6;
   }
   100% {
-    transform: translateX(0) scale(0.7);
+    transform: translateX(0) scale(0.5); /* Reducido */
     opacity: 1;
   }
 }
 
 .paypal-logo {
-  width: 120px; /* Reducido */
+  width: 80px;  /* Reducido aún más */
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
   transition: transform 0.3s ease;
 }
 
@@ -115,10 +115,10 @@
 .continuar-btn {
   background-color: #28a745; /* Verde */
   color: white;
-  font-size: 22px;
-  padding: 15px 30px;
+  font-size: 14px; /* Reducido */
+  padding: 10px 20px; /* Reducido */
   border: none;
-  border-radius: 10px;
+  border-radius: 6px; /* Más pequeño */
   cursor: pointer;
   animation: botonAnimado 5s ease-out forwards;
 }
@@ -140,13 +140,13 @@
 
 .continuar-btn:hover {
   background-color: #218838;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Contador de redirección */
 #contador {
-  font-size: 20px;
-  margin-top: 15px;
+  font-size: 12px; /* Reducido */
+  margin-top: 10px;
   animation: contadorAnimado 5s ease-out forwards;
 }
 
@@ -170,8 +170,8 @@
   left: 20px;
   background-color: #ff9800;
   color: white;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 15px; /* Reducido */
+  border-radius: 6px; /* Más pequeño */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
   z-index: 1000;
@@ -187,5 +187,36 @@
   from { opacity: 1; }
   to { opacity: 0; }
 }
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 767px) {
+  .mensaje-donacion {
+    width: 85%;
+    padding: 12px;
+    font-size: 12px; /* Texto más pequeño */
+  }
+
+  .mensaje-donacion h2 {
+    font-size: 10px; /* Texto más pequeño */
+  }
+
+  .mundojuan-link {
+    font-size: 14px; /* Texto más pequeño */
+  }
+
+  .paypal-logo {
+    width: 70px; /* Más pequeño en dispositivos móviles */
+  }
+
+  .continuar-btn {
+    font-size: 12px;
+    padding: 8px 16px; /* Botón más pequeño */
+  }
+
+  #contador {
+    font-size: 10px; /* Texto más pequeño */
+  }
+}
+
 
   
