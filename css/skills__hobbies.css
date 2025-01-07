@@ -1,53 +1,133 @@
-.skills-hobbies__propiedades{
-    padding: 5rem;
-  
+/* Skills y Hobbies Fondo */
+.skills-hobbies {
+    background-color: #f4f4f4; /* Conservando el fondo anterior */
+    padding: 5rem 2rem;
+    position: relative;
+    overflow: hidden;
 }
-.skills__hobbies{
-    padding-top: 0;
-}
-.skills h1{
-    font-size: 2.5rem;
-    text-align: center;
-    padding-bottom: 7rem ;
-    font-weight: bold;
-   color:  #464646;
-}
-.skills__nav{
-    justify-content: space-between;
-}
-.skills__list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-.hobbies{
-    padding-top: 8rem;
-}
-.hobbies h1{
-        font-size: 2.5rem;
-        text-align: center;
-        padding-bottom: 7rem ;
-        font-weight: bold;
-        color: #464646;
-}
-.hobbies__list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-align: center;
-}
-.hobbies__nav{
-    justify-content: space-between;
 
-}
-.skills__list i {
-    color: rgb(141, 200, 85);
-    font-size: 3.5rem;
-}
-.hobbies__list i {
-    color: rgb(141, 200, 85);
+/* Encabezados con Animación */
+.skills__title, .hobbies__title {
     font-size: 3rem;
-    
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    color: #464646;
+    letter-spacing: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.skills__title::after, .hobbies__title::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #4ade80;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.5s ease-in-out;
+}
+
+.skills__title:hover::after, .hobbies__title:hover::after {
+    width: 100%;
+}
+
+/* Lista de Skills y Hobbies */
+.skills__nav, .hobbies__nav {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.skills__list, .hobbies__list {
+    text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0; /* Inicialmente ocultos */
+}
+
+.skills__list:hover, .hobbies__list:hover {
+    transform: translateY(-10px);
+}
+
+.skills__list i, .hobbies__list i {
+    font-size: 3rem;
+    color: #8dc855;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skills__list:hover i, .hobbies__list:hover i {
+    color: #f97316;
+    transform: scale(1.2);
+}
+
+.skills__list p, .hobbies__list p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #464646;
+}
+
+/* Fondo de Estilo */
+.skills-hobbies__fondo::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: move 10s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Animación de AOS */
+[data-aos] {
+    opacity: 1 !important; /* Se hace visible cuando la animación se activa */
+}
+
+[data-aos="fade-up"] {
+    animation: fadeUp 1s ease-in-out;
+}
+
+[data-aos="fade-right"] {
+    animation: fadeRight 1s ease-in-out;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }

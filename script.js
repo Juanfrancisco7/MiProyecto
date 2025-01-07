@@ -1,3 +1,5 @@
+// Validación de formulario
+
 // Selección de todos los inputs y textareas en el formulario
 const inputs = document.querySelectorAll(".input");
 const textareas = document.querySelectorAll(".textarea");
@@ -125,7 +127,7 @@ function mostrarNotificacion() {
     notificacion.classList.add("notificacion");
     notificacion.innerHTML = `
         <p>¡Mensaje enviado satisfactoriamente!</p>
-        <p>Sin embargo, te recomendamos contactar directamente con el remitente, ya que por motivos laborales la respuesta podría demorarse.</p>
+        <p>Sin embargo, te recomendamos contactar directamente con el destinatario, ya que por motivos laborales la respuesta podría demorarse.</p>
     `;
 
     document.body.appendChild(notificacion);
@@ -168,3 +170,25 @@ style.innerHTML = `
     }
 `;
 document.head.appendChild(style);
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Selección de todos los párrafos dentro de la clase .sobre-mi__texto
+    const paragraphs = document.querySelectorAll(".sobre-mi__texto"); 
+
+    // Creamos una función que se ejecutará cuando el párrafo esté visible
+    const paragraphObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible"); // Añadimos la clase visible cuando el párrafo entra en el viewport
+            }
+        });
+    }, {
+        threshold: 0.5 // 50% del párrafo visible
+    });
+
+    // Observamos cada párrafo
+    paragraphs.forEach(paragraph => {
+        paragraphObserver.observe(paragraph);
+    });
+});
+

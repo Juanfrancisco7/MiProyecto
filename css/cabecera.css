@@ -1,0 +1,147 @@
+/* Estilos para la cabecera */
+.background__head__banner {
+  background-color: #2c3e50;
+  padding: 1rem 0;
+}
+
+/* Cabecera */
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #34495e;
+  color: #fff;
+  padding: 0.5rem 0;
+  animation: fadeIn 2.5s ease-out;
+}
+
+/* Contenedor de la cabecera */
+.head__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 3rem;
+  position: relative;
+}
+
+/* Estilo para el texto de la cabecera */
+.head__yo {
+  font-size: 1.25rem;
+  color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  animation: slideInLeft 2.5s ease-out;
+}
+
+.head__yo i {
+  margin-right: 10px;
+}
+
+/* Estilo para el menú de navegación */
+.head__nav {
+  display: flex;
+  gap: 2rem;
+  list-style-type: none;
+  justify-content: center;
+  width: 100%;
+  animation: slideInTop 2.5s ease-out;
+}
+
+.head__list {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.head__list:hover {
+  color: #8dc853; /* Color verde en hover */
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  animation: slideInRight 1s ease-out;
+}
+
+.social-icon img,
+.social-icon i {
+  width: 25px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.social-icon img:hover,
+.social-icon i:hover {
+  transform: scale(1.1); /* Efecto de hover */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInTop {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Responsividad: Menú y cabecera en pantallas pequeñas */
+@media (max-width: 768px) {
+  .head__container {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .head__yo {
+    font-size: 1.1rem;
+  }
+
+  .head__nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+  

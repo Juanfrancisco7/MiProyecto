@@ -1,109 +1,59 @@
 .banner__propiedades {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 6rem;
-    margin-bottom: -4rem; /* Ajusta para que la sección esté más cerca de la línea */
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6rem;
+  margin-bottom: -4rem; /* Ajusta para que la sección esté más cerca de la línea */
 }
 
 .banner__descripcion {
-    flex-direction: column;
-    width: 55%;
-    padding: 0;
-    justify-content: flex-start; /* Alineación desde la parte superior */
-    gap: 2rem; /* Aumento el espacio entre los elementos */
-    margin-top: -2rem; /* Ajusta la posición hacia arriba */
+  flex-direction: column;
+  width: 55%;
+  padding: 0;
+  justify-content: flex-start; /* Alineación desde la parte superior */
+  gap: 2rem; /* Aumento el espacio entre los elementos */
+  margin-top: -2rem; /* Ajusta la posición hacia arriba */
 }
 
 .banner__descripcion h1 {
-    font-weight: 700;
-    font-size: 2.5rem; /* Aumenté el tamaño del texto */
-    line-height: 30px;
-    margin-top: 0; /* Eliminado margen superior adicional */
-    margin-bottom: 1rem; /* Un pequeño margen para separar del siguiente texto */
-    color: #333; /* Color de texto */
+  font-weight: 700;
+  font-size: 2.5rem; /* Aumenté el tamaño del texto */
+  line-height: 30px;
+  margin-top: 0; /* Eliminado margen superior adicional */
+  margin-bottom: 1rem; /* Un pequeño margen para separar del siguiente texto */
+  color: #333; /* Color de texto */
 }
 
 .banner__descripcion p {
-    font-size: 1.25rem; /* Aumenté el tamaño de la fuente */
-    line-height: 1.6; /* Mayor espacio entre líneas para mejorar la legibilidad */
-    color: #333; /* Asegura que el color sea consistente y legible */
-    font-weight: 400; /* Ajusta el peso para mayor claridad */
+  font-size: 1.25rem; /* Aumenté el tamaño de la fuente */
+  line-height: 1.6; /* Mayor espacio entre líneas para mejorar la legibilidad */
+  color: #333; /* Asegura que el color sea consistente y legible */
+  font-weight: 400; /* Ajusta el peso para mayor claridad */
 }
 
 .banner__descripcion__list {
-    padding-left: 0;
-    padding-right: 1rem;
-    font-weight: bold;
-    color: #555; /* Color de texto para los elementos de la lista */
+  padding-left: 0;
+  padding-right: 1rem;
+  font-weight: bold;
+  color: #555; /* Color de texto para los elementos de la lista */
 }
 
 .banner__descripcion__list li {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    font-size: 1.1rem; /* Tamaño de fuente más legible */
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 1.1rem; /* Tamaño de fuente más legible */
 }
 
 .banner__descripcion__img {
-    width: 340px;
-    border-radius: 50%; /* Ronda la imagen */
-    height: 350px;
-    object-fit: cover; /* Mantiene la proporción de la imagen */
-    border: 2px solid #8dc853; /* Borde verde para la imagen */
+  width: 340px;
+  border-radius: 50%; /* Ronda la imagen */
+  height: 350px;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  border: 2px solid #8dc853; /* Borde verde para la imagen */
 }
 
 .banner__descripcion__nav {
-    display: flex;
-    align-items: center;
-    gap: 3px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
-
-.link b {
-    color: rgb(141, 200, 85); /* Color verde */
-}
-
-/* Estilo para los iconos de redes sociales en el header */
-.social-icons {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    margin-left: 20px;
-}
-
-.social-icon img {
-    width: 25px;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
-.social-icon:hover img {
-    transform: scale(1.1); /* Efecto de hover en los íconos */
-}
-
-/* Asegura que las redes sociales se alineen bien */
-.head__yo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.head__nav {
-    display: flex;
-    gap: 2rem;
-    margin-left: auto;
-    display: flex;
-    gap: 5rem; /* Espaciado horizontal entre los enlaces */
-}
-
-.head__list {
-    text-decoration: none;
-    color: black;
-    margin: 1rem 0;
-}
-
-.head__nav__tablet {
-    display: none;
-}
-
-
-
