@@ -291,6 +291,48 @@ rel="stylesheet">
   </div>
 </section>
 
+<script>document.getElementById("miFormulario").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+
+  // Validación manual si es necesario
+  if (!document.getElementById("name").value || 
+      !document.getElementById("email").value || 
+      !document.getElementById("asunto").value || 
+      !document.getElementById("mensaje").value) {
+    alert("Por favor completa todos los campos.");
+    return; // Detener la ejecución si hay campos vacíos
+  }
+
+  // Obtención de los datos del formulario
+  var nombre = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var asunto = document.getElementById("asunto").value;
+  var mensaje = document.getElementById("mensaje").value;
+
+  // Parámetros para el template de EmailJS
+  var templateParams = {
+    asunto: asunto,
+    mensaje: mensaje,
+    name: nombre,
+    email: email
+  };
+
+  // Mostrar los parámetros antes de enviar
+  console.log(templateParams);
+
+  // Enviar el correo usando EmailJS
+  emailjs.send("service_1fd29qg", "template_lhkn88h", templateParams)
+    .then(function(response) {
+      console.log("Mensaje enviado con éxito", response);
+      alert("Mensaje enviado con éxito");
+      document.getElementById("miFormulario").reset(); // Limpiar el formulario
+    }, function(error) {
+      console.log("Error al enviar el mensaje", error);
+      alert("Error al enviar el mensaje. Inténtalo de nuevo.");
+    });
+});
+</script>
+
 <!------------Footer------------>
 <footer class="footer">
   <div class="footer__container">
