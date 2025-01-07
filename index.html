@@ -259,7 +259,7 @@ rel="stylesheet">
 <section class="contactame" id="contactame">
   <div class="contactame__container container">
     <div class="contactame__contenido">
-      <h1 class="contactame__contenido__title">Contacto</h1>
+      <h1 class="contactame__contenido__title" data-aos="fade-up">Contacto</h1>
       <form class="contactame__formulario" id="miFormulario">
         <fieldset>
           <!-- Campo Nombre -->
@@ -324,35 +324,108 @@ rel="stylesheet">
     emailjs.sendForm(serviceID, templateID, this)
       .then(function(response) {
         console.log("Mensaje enviado con éxito", response);
-        alert("Mensaje enviado con éxito");
         document.getElementById("miFormulario").reset(); // Limpiar el formulario
         btn.value = 'Enviar mensaje';  // Restaurar el texto del botón
+        mostrarNotificacion("Su mensaje ha sido enviado con éxito. Para cualquier asunto urgente, le recomendamos comunicarse a través de otros canales, ya que esta vía puede tener tiempos de respuesta más largos.", "success");
       }, function(error) {
         console.log("Error al enviar el mensaje", error);
         alert("Error al enviar el mensaje. Inténtalo de nuevo.");
         btn.value = 'Enviar mensaje';  // Restaurar el texto del botón
+        mostrarNotificacion("Hubo un error al enviar el mensaje. Inténtalo de nuevo.", "error");
       });
   });
+
+  // Función para mostrar la notificación
+  function mostrarNotificacion(mensaje, tipo) {
+    const notificacion = document.createElement("div");
+    notificacion.classList.add("notificacion");
+    notificacion.innerHTML = `<p>${mensaje}</p>`;
+    if (tipo === "success") {
+      notificacion.style.backgroundColor = "#4caf50"; // Color verde para éxito
+    } else if (tipo === "error") {
+      notificacion.style.backgroundColor = "#f44336"; // Color rojo para error
+    }
+
+    // Añadimos la notificación al cuerpo del documento
+    document.body.appendChild(notificacion);
+
+    // Eliminar la notificación después de 8 segundos
+    setTimeout(() => {
+      notificacion.remove();
+    }, 8000); // 8 segundos para eliminar la notificación
+
+    // Recargar la página y desplazarse al inicio
+    setTimeout(() => {
+      location.reload(); // Recargar la página después de 8 segundos
+      window.scrollTo(0, 0); // Aseguramos que la página se desplaza al principio
+    }, 8000);
+  }
+
+  // Verificamos si ya se ha recargado la página
+  if (sessionStorage.getItem('pageReloaded')) {
+    // Mostrar la notificación después de la recarga
+    mostrarNotificacionRecarga();
+    sessionStorage.removeItem('pageReloaded'); // Limpiar la variable de sesión
+  }
+
+  // Función para mostrar la notificación después de la recarga
+  function mostrarNotificacionRecarga() {
+    const notificacionRecarga = document.createElement("div");
+    notificacionRecarga.classList.add("notificacion-recarga");
+    notificacionRecarga.innerHTML = `
+      <p>¿Ya visitaste <a href="https://www.mundojuan.com" target="_blank">MUNDOJUAN</a>? 
+      Cuéntame tu experiencia <a href="https://www.instagram.com/juanfrancisco7?utm_source=qr&igsh=cGIwYjAyZGF3OWJk" target="_blank">aquí</a></p>
+    `;
+    
+    // Añadimos la notificación al cuerpo del documento
+    document.body.appendChild(notificacionRecarga);
+
+    // Eliminar la notificación después de 8 segundos
+    setTimeout(() => {
+      notificacionRecarga.remove();
+    }, 8000); // 8 segundos para eliminar la notificación
+  }
+
+  // Establecer que la página se ha recargado para mostrar la notificación
+  if (!sessionStorage.getItem('pageReloaded')) {
+    sessionStorage.setItem('pageReloaded', 'true');
+  }
+
+  // Inicialización de AOS (animaciones)
+  AOS.init({
+    duration: 1500, // Duración de las animaciones en milisegundos
+    once: true      // La animación ocurre una sola vez
+  });
+
+  // Esperamos a que el DOM esté completamente cargado
+  document.addEventListener("DOMContentLoaded", function () {
+
+    // Selección de todos los párrafos dentro de la clase .sobre-mi__texto
+    const paragraphs = document.querySelectorAll(".sobre-mi__texto");
+
+    // Creamos una función que se ejecutará cuando el párrafo esté visible
+    const paragraphObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible"); // Añadimos la clase visible cuando el párrafo entra en el viewport
+        }
+      });
+    }, {
+      threshold: 0.5 // 50% del párrafo visible
+    });
+
+    // Observamos cada párrafo
+    paragraphs.forEach(paragraph => {
+      paragraphObserver.observe(paragraph);
+    });
+
+    // Animación en imágenes (AOS)
+    const images = document.querySelectorAll(".experiencia__container__img");
+    images.forEach((img) => {
+      img.setAttribute('data-aos', 'fade-up');
+    });
+  });
 </script>
-
-
-<!------------Footer------------>
-<footer class="footer">
-  <div class="footer__container">
-    <div class="footer__info">
-      <b><i class="fa-regular fa-copyright"></i></b>
-      <p>Desarrollado por <span class="footer__name">Juan Francisco Bencomo Chacín</span></p>
-    </div>
-    <div class="footer__year">
-      <p>2022</p>
-    </div>
-    <div class="footer__socials">
-      <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-      <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    </div>
-  </div>
-</footer>
 
 <!-- Estilos CSS para la notificación -->
 <style>
@@ -396,150 +469,7 @@ rel="stylesheet">
   }
 </style>
 
-<!-- Archivos JavaScript -->
+
+<!-- Archivos JavaScript para las animaciones -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  // Inicializamos EmailJS con tu public key
-  emailjs.init("MozjG_1EF6MduDcEx");
 
-  // Inicialización de AOS (animaciones)
-  AOS.init({
-    duration: 1500, // Duración de las animaciones en milisegundos
-    once: true      // La animación ocurre una sola vez
-  });
-
-  // Esperamos a que el DOM esté completamente cargado
-  document.addEventListener("DOMContentLoaded", function () {
-
-    // Selección de todos los párrafos dentro de la clase .sobre-mi__texto
-    const paragraphs = document.querySelectorAll(".sobre-mi__texto");
-
-    // Creamos una función que se ejecutará cuando el párrafo esté visible
-    const paragraphObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible"); // Añadimos la clase visible cuando el párrafo entra en el viewport
-        }
-      });
-    }, {
-      threshold: 0.5 // 50% del párrafo visible
-    });
-
-    // Observamos cada párrafo
-    paragraphs.forEach(paragraph => {
-      paragraphObserver.observe(paragraph);
-    });
-
-    // Validación y envío del formulario
-    const formulario = document.querySelector("#miFormulario");
-    formulario.addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevenir el envío por defecto
-
-      const name = document.querySelector("#name").value;
-      const email = document.querySelector("#email").value;
-      const asunto = document.querySelector("#asunto").value;
-      const mensaje = document.querySelector("#mensaje").value;
-
-      // Verificar si los campos son válidos
-      if (name && email && asunto && mensaje) {
-        const params = {
-          from_name: name,
-          from_email: email,
-          subject: asunto,
-          message: mensaje
-        };
-
-        // Enviar el correo a través de EmailJS
-        emailjs.send("service_1fd29qg", "template_lhkn88h", params)
-          .then(function(response) {
-            console.log("Correo enviado exitosamente:", response);
-            mostrarNotificacion("¡Mensaje enviado correctamente!", "success");
-          })
-          .catch(function(error) {
-            console.error("Error al enviar el correo:", error);
-            mostrarNotificacion("Hubo un error al enviar el mensaje. Inténtalo de nuevo.", "error");
-          });
-      } else {
-        mostrarNotificacion("Por favor completa todos los campos.", "error");
-      }
-    });
-
-    // Función para mostrar la notificación
-    function mostrarNotificacion(mensaje, tipo) {
-      const notificacion = document.createElement("div");
-      notificacion.classList.add("notificacion");
-      notificacion.innerHTML = `<p>${mensaje}</p>`;
-      if (tipo === "success") {
-        notificacion.style.backgroundColor = "#4caf50"; // Color verde para éxito
-      } else if (tipo === "error") {
-        notificacion.style.backgroundColor = "#f44336"; // Color rojo para error
-      }
-
-      // Añadimos la notificación al cuerpo del documento
-      document.body.appendChild(notificacion);
-
-      // Eliminar la notificación después de 8 segundos
-      setTimeout(() => {
-        notificacion.remove();
-      }, 8000); // 8 segundos para eliminar la notificación
-
-      // Recargar la página y desplazarse al inicio
-      setTimeout(() => {
-        location.reload(); // Recargar la página después de 8 segundos
-        window.scrollTo(0, 0); // Aseguramos que la página se desplaza al principio
-      }, 8000);
-    }
-
-    // Verificamos si ya se ha recargado la página
-    if (sessionStorage.getItem('pageReloaded')) {
-      // Mostrar la notificación después de la recarga
-      mostrarNotificacionRecarga();
-      sessionStorage.removeItem('pageReloaded'); // Limpiar la variable de sesión
-    }
-
-    // Función para mostrar la notificación después de la recarga
-    function mostrarNotificacionRecarga() {
-      const notificacionRecarga = document.createElement("div");
-      notificacionRecarga.classList.add("notificacion-recarga");
-      notificacionRecarga.innerHTML = `
-        <p>¿Ya visitaste <a href="https://www.mundojuan.com" target="_blank">MUNDOJUAN</a>? 
-        Cuéntame tu experiencia <a href="https://www.instagram.com/juanfrancisco7?utm_source=qr&igsh=cGIwYjAyZGF3OWJk" target="_blank">aquí</a></p>
-      `;
-      
-      // Añadimos la notificación al cuerpo del documento
-      document.body.appendChild(notificacionRecarga);
-
-      // Eliminar la notificación después de 8 segundos
-      setTimeout(() => {
-        notificacionRecarga.remove();
-      }, 8000); // 8 segundos para eliminar la notificación
-    }
-
-    // Establecer que la página se ha recargado para mostrar la notificación
-    if (!sessionStorage.getItem('pageReloaded')) {
-      sessionStorage.setItem('pageReloaded', 'true');
-    }
-
-    // Funciones para las animaciones de imágenes (AOS)
-    const images = document.querySelectorAll(".experiencia__container__img");
-
-    // Creamos una función que se ejecutará cuando la imagen esté visible
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible"); // Añadimos la clase visible cuando la imagen entra en el viewport
-        } else {
-          entry.target.classList.remove("visible"); // Removemos la clase visible cuando la imagen sale del viewport
-        }
-      });
-    }, {
-      threshold: 0.1 // 10% de la imagen debe estar visible para disparar la animación
-    });
-
-    // Observamos cada imagen
-    images.forEach(image => {
-      imageObserver.observe(image);
-    });
-  });
-</script>
