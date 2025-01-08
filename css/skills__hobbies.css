@@ -35,108 +35,93 @@
     width: 100%;
 }
 
-/* Lista de Skills y Hobbies */
-.skills__nav, .hobbies__nav {
+/* Lista de Skills */
+.skills__nav {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-direction: column; /* Vertical para Skills */
+    align-items: center;
+    gap: 2.5rem; /* Mayor separación entre Skills */
 }
 
-.skills__list, .hobbies__list {
+.skills__list {
     text-align: center;
+    font-size: 1.5rem; /* Tamaño más grande */
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0; /* Inicialmente ocultos */
 }
 
-.skills__list:hover, .hobbies__list:hover {
+.skills__list:hover {
     transform: translateY(-10px);
 }
 
-.skills__list i, .hobbies__list i {
-    font-size: 3rem;
+.skills__list i {
+    font-size: 3.5rem; /* Iconos más grandes */
     color: #8dc855;
     margin-bottom: 1rem;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.skills__list:hover i, .hobbies__list:hover i {
+.skills__list:hover i {
     color: #f97316;
     transform: scale(1.2);
 }
 
-.skills__list p, .hobbies__list p {
-    font-size: 1rem;
+.skills__list p {
+    font-size: 1.2rem; /* Texto más grande */
     font-weight: 500;
     color: #464646;
 }
 
-/* Fondo de Estilo */
-.skills-hobbies__fondo::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    left: -100px;
-    width: 300px;
-    height: 300px;
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 50%;
-    filter: blur(100px);
-    animation: move 10s linear infinite;
+/* Lista de Hobbies */
+.hobbies__nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas por fila */
+    gap: 2rem; /* Separación entre Hobbies */
+    justify-items: center;
+    align-items: center;
 }
 
-@keyframes move {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(50px);
-    }
-    100% {
-        transform: translateX(0);
-    }
+.hobbies__list {
+    text-align: center;
+    font-size: 1.5rem; /* Tamaño más grande */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0; /* Inicialmente ocultos */
 }
 
-/* Animación de AOS */
-[data-aos] {
-    opacity: 0; /* Los elementos comienzan invisibles */
-    transform: translateY(30px); /* Los elementos están desplazados hacia abajo */
-    transition-property: transform, opacity; /* Transición de transformaciones y opacidad */
-    transition-duration: 0.7s; /* Duración de la transición */
-  }
-  
-  /* Esto será animado por AOS cuando el elemento entre en el viewport */
-[data-aos].aos-animate {
-    opacity: 1; /* Se vuelve visible */
-    transform: translateY(0); /* Se mueve a su posición original */
-  }
-
-[data-aos="fade-up"] {
-    animation: fadeUp 1s ease-in-out;
+.hobbies__list:hover {
+    transform: translateY(-10px);
 }
 
-[data-aos="fade-right"] {
-    animation: fadeRight 1s ease-in-out;
+.hobbies__list i {
+    font-size: 3.5rem; /* Iconos más grandes */
+    color: #8dc855;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hobbies__list:hover i {
+    color: #f97316;
+    transform: scale(1.2);
 }
 
-@keyframes fadeRight {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
+.hobbies__list p {
+    font-size: 1.2rem; /* Texto más grande */
+    font-weight: 500;
+    color: #464646;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Hobbies: Mostrar en dos filas de tres */
+    .hobbies__nav {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
     }
-    to {
-        opacity: 1;
-        transform: translateX(0);
+    
+    .skills__list i, .hobbies__list i {
+        font-size: 3rem; /* Ajustar tamaño de iconos */
+    }
+
+    .skills__list p, .hobbies__list p {
+        font-size: 1rem; /* Ajustar tamaño del texto */
     }
 }
