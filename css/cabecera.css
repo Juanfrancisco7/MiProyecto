@@ -100,16 +100,17 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    padding: 0 1rem;
   }
 
-  /* Primera línea */
+  /* Primera línea (Logo) */
   .head__logo {
     flex-direction: row;
     justify-content: center;
     width: 100%;
   }
 
-  /* Segunda línea */
+  /* Segunda línea (Sobre mí, Skills, Hobbies) */
   .linea-2 {
     display: flex;
     justify-content: center;
@@ -119,7 +120,7 @@
     justify-content: center;
   }
 
-  /* Tercera línea */
+  /* Tercera línea (Certificaciones, Contactame) */
   .linea-3 {
     display: flex;
     justify-content: center;
@@ -133,10 +134,21 @@
     flex: 1;
   }
 
-  /* Cuarta línea */
+  /* Cuarta línea (Redes sociales) */
   .social-icons {
     width: 100%;
     justify-content: center;
+  }
+
+  /* Hacer que el texto "Sobre mí, Skills, Hobbies, Certificaciones, Contactame" se dividan en más líneas si no entran en una sola */
+  .head__nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .head__list {
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -172,6 +184,7 @@
 .head__list:hover {
   animation: glow 5s infinite alternate ease-in-out; /* Efecto brillante */
 }
+
 
 
 
