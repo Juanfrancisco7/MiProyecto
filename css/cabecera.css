@@ -1,9 +1,13 @@
 /* Fondo más corto */
 .background__head__banner {
   background-color: #2c3e50;
-  padding: 1rem 0.5rem; /* Altura reducida */
+  padding: 1rem 0.5rem; /* Ajustamos la altura del fondo */
   position: relative;
   overflow: hidden;
+  max-height: 350px; /* Establecemos una altura máxima para que no sea tan grande */
+  display: flex; /* Aseguramos que el contenido esté alineado correctamente */
+  justify-content: center;
+  align-items: center;
 }
 
 /* Cabecera */
@@ -14,32 +18,35 @@
   flex-direction: column;
   background-color: #34495e;
   color: #fff;
-  padding: 0.5rem 0;
+  padding: 1rem 0; /* Ajustamos el padding para hacerlo más compacto */
   animation: fadeIn 5s ease-in-out; /* Efecto alucinante de 5 segundos */
+  height: 100%; /* Aseguramos que ocupe toda la altura disponible */
 }
 
 /* Contenedor general */
 .head__container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
   max-width: 1200px;
   width: 100%;
   padding: 0 3rem;
   position: relative;
   flex-wrap: wrap;
   gap: 2rem;
+  text-align: center; /* Aseguramos que todo el texto esté centrado */
 }
 
 /* Estilo para @JuanFrancisco7 */
 .head__yo {
-  font-size: 2.5rem; /* Aumentamos el tamaño */
+  font-size: 2rem; /* Reducimos el tamaño de la fuente a la mitad */
   font-weight: bold;
   color: #ecf0f1;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para hacerlo más visible */
-  letter-spacing: 2px; /* Aumenta el espacio entre letras para mayor efecto visual */
+  letter-spacing: 1px; /* Ajustamos el espacio entre letras */
   animation: pulse 2s infinite alternate; /* Animación de pulso */
   transition: transform 0.3s ease; /* Transición suave */
+  text-align: center; /* Centrar el texto */
 }
 
 .head__yo i {
@@ -110,6 +117,10 @@
 
 /* Diseño responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
+  .background__head__banner {
+    max-height: none; /* No limitamos la altura en pantallas pequeñas */
+  }
+
   .head__container {
     flex-direction: column;
     align-items: center;
@@ -173,7 +184,7 @@
 @media (min-width: 769px) {
   .head__container {
     flex-direction: row; /* Alineamos los elementos de forma horizontal */
-    justify-content: space-between;
+    justify-content: center; /* Aseguramos que los elementos se mantengan centrados */
   }
 
   /* Redefinir el estilo de las redes sociales para pantallas grandes */
@@ -186,7 +197,8 @@
   }
 
   .head__yo {
-    font-size: 3rem; /* Aumentamos el tamaño para pantallas grandes */
+    font-size: 2.5rem; /* Reducimos el tamaño aún más para pantallas grandes */
+    margin: 0 auto; /* Centrado horizontal */
   }
 
   .head__nav {
@@ -235,6 +247,10 @@
 .head__list:hover {
   animation: glow 5s infinite alternate ease-in-out; /* Efecto brillante */
 }
+
+
+
+
 
 
 
