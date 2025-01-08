@@ -13,40 +13,37 @@
 /* Cabecera */
 .head {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Los elementos se distribuyen a lo largo de la línea */
   align-items: center;
-  flex-direction: column;
+  flex-direction: row; /* Los elementos estarán en una línea */
   background-color: #34495e;
   color: #fff;
   padding: 1rem 0; /* Ajustamos el padding para hacerlo más compacto */
   animation: fadeIn 5s ease-in-out; /* Efecto alucinante de 5 segundos */
-  height: 100%; /* Aseguramos que ocupe toda la altura disponible */
+  width: 100%; /* Aseguramos que ocupe toda la anchura disponible */
 }
 
 /* Contenedor general */
 .head__container {
   display: flex;
-  justify-content: center; /* Centrado horizontal */
+  justify-content: space-between; /* Los elementos se alinean en los extremos */
   align-items: center; /* Centrado vertical */
   max-width: 1200px;
   width: 100%;
   padding: 0 3rem;
   position: relative;
-  flex-wrap: wrap;
-  gap: 2rem;
   text-align: center; /* Aseguramos que todo el texto esté centrado */
 }
 
 /* Estilo para @JuanFrancisco7 */
 .head__yo {
-  font-size: 2rem; /* Reducimos el tamaño de la fuente a la mitad */
+  font-size: 2rem; /* Reducimos el tamaño de la fuente */
   font-weight: bold;
   color: #ecf0f1;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para hacerlo más visible */
   letter-spacing: 1px; /* Ajustamos el espacio entre letras */
   animation: pulse 2s infinite alternate; /* Animación de pulso */
   transition: transform 0.3s ease; /* Transición suave */
-  text-align: center; /* Centrar el texto */
 }
 
 .head__yo i {
@@ -65,7 +62,7 @@
   gap: 2rem;
   list-style-type: none;
   justify-content: center;
-  width: 100%;
+  width: auto;
   flex-wrap: wrap; /* Asegura que se acomoden bien los elementos */
 }
 
@@ -90,10 +87,9 @@
 .social-icons {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-end; /* Alineamos las redes sociales a la derecha */
   flex-wrap: wrap; /* Se acomoda bien en pantallas grandes */
-  width: 100%;
-  margin-top: 1rem;
+  width: auto;
 }
 
 .social-icon img,
@@ -122,9 +118,9 @@
   }
 
   .head__container {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
   }
 
   /* Botón de desplegar con texto "Más" y flecha hacia abajo */
@@ -184,16 +180,13 @@
 @media (min-width: 769px) {
   .head__container {
     flex-direction: row; /* Alineamos los elementos de forma horizontal */
-    justify-content: center; /* Aseguramos que los elementos se mantengan centrados */
+    justify-content: space-between; /* Los elementos están distribuidos a lo largo de la pantalla */
   }
 
   /* Redefinir el estilo de las redes sociales para pantallas grandes */
   .social-icons {
     flex-direction: row; /* Redes sociales en fila */
-    justify-content: center;
-    width: 100%;
-    margin-top: 1rem;
-    grid-column: span 2; /* Se asegura que las redes se muestren centradas */
+    justify-content: flex-end; /* Alineamos las redes sociales a la derecha */
   }
 
   .head__yo {
@@ -207,46 +200,30 @@
     flex-direction: row; /* Alineamos los elementos horizontalmente */
   }
 
-  /* Ocultar el botón de "Sobre mi" con la flecha en pantallas grandes */
+  /* Ocultar el botón de "Sobre mi" en pantallas grandes */
   .toggle-button {
     display: none;
   }
 }
 
-/* Efectos de animación */
 @keyframes fadeIn {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(-50px);
   }
-  50% {
-    opacity: 0.5;
-    transform: translateY(10px);
-  }
-  100% {
+  to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
-/* Efecto de pulso para hacer el @JuanFrancisco7 más llamativo */
 @keyframes pulse {
   0% {
     transform: scale(1);
   }
-  50% {
-    transform: scale(1.1);
-    color: #f39c12; /* Cambia de color durante el pulso */
-  }
   100% {
-    transform: scale(1);
+    transform: scale(1.2);
   }
 }
 
-/* Efecto brillante cuando se hace hover sobre los elementos */
-.head__list:hover {
-  animation: glow 5s infinite alternate ease-in-out; /* Efecto brillante */
-}
 
 
 
