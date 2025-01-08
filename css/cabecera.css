@@ -58,6 +58,8 @@
   gap: 2rem;
   list-style-type: none;
   justify-content: center;
+  width: 100%;
+  flex-wrap: wrap; /* Asegura que se acomoden bien los elementos */
 }
 
 .head__list {
@@ -82,6 +84,9 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap; /* Se acomoda bien en pantallas grandes */
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .social-icon img,
@@ -157,6 +162,43 @@
     width: 100%;
     justify-content: center;
   }
+
+  /* Mostrar botón de "Más" solo en pantallas pequeñas */
+  .toggle-button {
+    display: flex;
+  }
+}
+
+/* Diseño para pantallas grandes (mayores a 768px) */
+@media (min-width: 769px) {
+  .head__container {
+    flex-direction: row; /* Alineamos los elementos de forma horizontal */
+    justify-content: space-between;
+  }
+
+  /* Redefinir el estilo de las redes sociales para pantallas grandes */
+  .social-icons {
+    flex-direction: row; /* Redes sociales en fila */
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+    grid-column: span 2; /* Se asegura que las redes se muestren centradas */
+  }
+
+  .head__yo {
+    font-size: 3rem; /* Aumentamos el tamaño para pantallas grandes */
+  }
+
+  .head__nav {
+    display: flex;
+    gap: 2rem;
+    flex-direction: row; /* Alineamos los elementos horizontalmente */
+  }
+
+  /* Ocultar el botón de "Sobre mi" con la flecha en pantallas grandes */
+  .toggle-button {
+    display: none;
+  }
 }
 
 /* Efectos de animación */
@@ -193,6 +235,7 @@
 .head__list:hover {
   animation: glow 5s infinite alternate ease-in-out; /* Efecto brillante */
 }
+
 
 
 
