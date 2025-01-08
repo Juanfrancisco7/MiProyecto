@@ -1,4 +1,5 @@
-// Mostrar mensaje de donación al inicio
+/*
+ // Mostrar mensaje de donación al inicio
 if (!sessionStorage.getItem('donationMessageShown')) {
   mostrarMensajeDonacion();
 }
@@ -42,4 +43,6 @@ function mostrarMensajeDonacion() {
   // Marcar que el mensaje ha sido mostrado en esta sesión
   sessionStorage.setItem('donationMessageShown', 'true');
 }
+*/
+
 
