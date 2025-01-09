@@ -1,4 +1,5 @@
-/* Estilo para el mensaje de donación */
+
+/* Estilo para el mensaje de donación*/
 .mensaje-donacion {
   position: fixed;
   top: 50%;
@@ -217,6 +218,9 @@
     font-size: 10px; /* Texto más pequeño */
   }
 }
+
+
+
 
 
   
