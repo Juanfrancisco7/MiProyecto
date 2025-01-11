@@ -126,10 +126,10 @@
 /* Botón de desplegar con solo texto "más" */
 .toggle-button {
   background: transparent; /* Fondo transparente */
-  color: hsl(81, 64%, 44%); /* Color de texto azul */
+  color: hsl(81, 64%, 44%); /* Color de texto verdecito */
   border: none; /* Sin borde */
   padding: 0.5rem 1rem; /* Espaciado cómodo alrededor del texto */
-  font-size: 1.2rem; /* Tamaño adecuado para el texto */
+  font-size: 1rem; /* Tamaño adecuado para el texto */
   font-weight: bold;
   border-radius: 20px; /* Bordes redondeados suaves */
   cursor: pointer;
@@ -138,7 +138,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  animation: move 2s ease-in-out infinite; /* Animación continua */
+  margin-left: 50px; /* Desplazar el botón ligeramente hacia la derecha */
+  animation: move 1s ease-in-out infinite; /* Animación continua */
 }
 
 /* Animación para el movimiento constante */
