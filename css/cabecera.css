@@ -123,7 +123,7 @@
     align-items: center;
   }
 
-/* Botón de desplegar con solo texto "info" */
+/* Botón de desplegar con solo texto "más" */
 .toggle-button {
   background: transparent; /* Fondo transparente */
   color: hsl(81, 64%, 44%); /* Color de texto azul */
@@ -133,7 +133,6 @@
   font-weight: bold;
   border-radius: 20px; /* Bordes redondeados suaves */
   cursor: pointer;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   outline: none; /* Sin contorno al enfocar */
   display: inline-flex;
