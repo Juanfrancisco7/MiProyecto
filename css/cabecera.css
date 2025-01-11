@@ -123,19 +123,68 @@
     align-items: center;
   }
 
-  /* Botón de desplegar con texto "Más" y flecha hacia abajo */
-  .toggle-button {
-    background-color: #34495e;
-    color: #fff;
-    border: none;
-    padding: 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+/* Botón de desplegar con solo texto "info" */
+.toggle-button {
+  background: transparent; /* Fondo transparente */
+  color: hsl(81, 64%, 44%); /* Color de texto azul */
+  border: none; /* Sin borde */
+  padding: 0.5rem 1rem; /* Espaciado cómodo alrededor del texto */
+  font-size: 1.2rem; /* Tamaño adecuado para el texto */
+  font-weight: bold;
+  border-radius: 20px; /* Bordes redondeados suaves */
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  outline: none; /* Sin contorno al enfocar */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: move 2s ease-in-out infinite; /* Animación continua */
+}
+
+/* Animación para el movimiento constante */
+@keyframes move {
+  0% {
+    transform: translateY(0); /* Posición inicial */
   }
+  50% {
+    transform: translateY(-3px); /* Movimiento hacia arriba */
+  }
+  100% {
+    transform: translateY(0); /* Regreso a la posición inicial */
+  }
+}
+
+/* Animación de la flecha */
+.toggle-button i {
+  font-size: 1.3rem; /* Tamaño cómodo para la flecha */
+  transition: transform 0.2s ease; /* Transición suave para la rotación */
+  animation: rotate 2s ease-in-out infinite; /* Flecha girando de manera continua */
+}
+
+/* Animación continua para la flecha */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); /* Flecha en su posición original */
+  }
+  50% {
+    transform: rotate(180deg); /* Flecha rotando 180 grados */
+  }
+  100% {
+    transform: rotate(360deg); /* Flecha regresando a su posición original */
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+  .toggle-button {
+    font-size: 1rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
+    padding: 0.4rem 0.8rem; /* Reducir el tamaño del botón en pantallas pequeñas */
+  }
+}
+
+--------------------------------------------------------------------------------------
+
 
   .toggle-button:hover {
     background-color: #8dc853;
