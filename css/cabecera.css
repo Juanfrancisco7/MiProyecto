@@ -139,7 +139,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-left: 20px; /* Desplazar el botón ligeramente hacia la derecha */
+  margin-left: 50px; /* Desplazar el botón ligeramente hacia la derecha */
   animation: move 1s ease-in-out infinite; /* Animación continua */
 }
 
