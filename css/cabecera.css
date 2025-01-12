@@ -74,6 +74,7 @@
   transition: all 0.3s ease;
 }
 
+
 .head__list:hover {
   color: #8dc853;
   transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
