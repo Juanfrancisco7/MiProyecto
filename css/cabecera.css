@@ -143,7 +143,6 @@
   animation: move 1s ease-in-out infinite; /* Animación continua */
 }
 
-
 /* Animación para el movimiento constante */
 @keyframes move {
   0% {
