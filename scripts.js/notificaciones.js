@@ -28,5 +28,3 @@ function mostrarNotificacion() {
   // Eliminar la notificación después de 8 segundos
   setTimeout(() => notificacion.remove(), 8000);
 }
-
-  
