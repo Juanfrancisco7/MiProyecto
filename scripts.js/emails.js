@@ -9,6 +9,7 @@ document.getElementById("miFormulario").addEventListener("submit", function(even
   const btn = document.getElementById('button');
   btn.value = 'Enviando...';
 
+  
   // Enviar el formulario a través de EmailJS
   const serviceID = 'service_1fd29qg';  // Tu Service ID de EmailJS
   const templateID = 'template_lhkn88h';  // Tu Template ID de EmailJS
