@@ -31,12 +31,13 @@
 }
 
 .galeria-img {
-  width: 250px;
+  width: 500px;
   height: auto;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: transform 0.3s ease;
+  margin: 30px 0;  /* Espacio superior e inferior */
 }
 
 .galeria-img:hover {
