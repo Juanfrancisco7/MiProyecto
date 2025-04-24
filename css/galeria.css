@@ -1,66 +1,60 @@
-/* Estilos generales (mantén estos iguales) */
-body {
-  margin: 0;
-  padding: 0;
-  background: #f4f6f8;
-  font-family: 'Segoe UI', sans-serif;
-  overflow-x: hidden;
+.galeria-proyectos {
+  background: #f5f5f5;
+  padding: 60px 20px;
+  text-align: center;
 }
 
 .titulo-galeria {
-  text-align: center;
-  font-size: 2.6rem;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
   color: #1e1e2f;
-  margin-top: 40px;
-  margin-bottom: 30px;
   font-weight: 800;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenedor con scroll automático en escritorio */
-.galeria-carrusel {
-  overflow: hidden;
-  position: relative;
-}
-
-.galeria {
+.galeria-item {
   display: flex;
-  gap: 40px;
-  padding: 30px;
-  width: max-content;
-  animation: scrollGaleria 20s linear infinite alternate;
-}
-
-@keyframes scrollGaleria {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-30%); }
-}
-
-.imagen-container {
-  perspective: 3000px;
-  display: flex;
+  align-items: center;
   justify-content: center;
-  flex: 0 0 auto;
+  margin: 40px auto;
+  gap: 30px;
+  max-width: 900px;
+  animation: saltar 2s ease-in-out infinite alternate;
 }
 
-.imagen-container img {
-  width: 500px;
-  max-width: 90vw;
-  border-radius: 20px;
-  transform: rotateY(-75deg);
-  transition: transform 0.4s ease, box-shadow 0.3s ease;
-  box-shadow: -20px 20px 50px rgba(0, 0, 0, 0.3);
+.fila-izquierda {
+  flex-direction: row;
+}
+
+.fila-derecha {
+  flex-direction: row-reverse;
+}
+
+.galeria-img {
+  width: 250px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.imagen-container:hover img {
-  animation-play-state: paused;
-  transform: rotateY(-15deg) scale(1.05);
+.galeria-img:hover {
+  transform: scale(1.05);
 }
 
-/* Stop animación al hacer hover */
-.galeria-carrusel:hover .galeria {
-  animation-play-state: paused;
+.galeria-leyenda {
+  max-width: 350px;
+  font-size: 1rem;
+  text-align: left;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Animación de brinquito */
+@keyframes saltar {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
 }
 
 /* Lightbox */
@@ -70,72 +64,63 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.95);
+  background: rgba(0,0,0,0.9);
   display: none;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: 20px;
-  box-sizing: border-box;
-  z-index: 9999;
+  z-index: 1000;
 }
 
 .lightbox img {
-  max-width: 95vw;
-  max-height: 95vh;
-  object-fit: contain;
+  max-width: 90vw;
+  max-height: 70vh;
   border-radius: 10px;
-  transition: transform 0.5s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+#lightbox-caption {
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  max-width: 80%;
+  line-height: 1.5;
 }
 
 .close-btn {
   position: absolute;
   top: 20px;
-  right: 25px;
-  font-size: 35px;
+  right: 30px;
+  font-size: 30px;
   color: white;
   cursor: pointer;
   font-weight: bold;
-  z-index: 10000;
+  z-index: 1001;
 }
 
-/* 📱 Dispositivos móviles */
+/* 📱 Responsive */
 @media screen and (max-width: 768px) {
-  .galeria-carrusel {
-    animation: scrollVertical 20s linear infinite alternate;
-    overflow: hidden;
+  .galeria-item {
+    flex-direction: column !important;
+    text-align: center;
   }
 
-  .galeria {
-    display: block;
-    width: 100%;
-    animation: none;
-    padding: 10px;
+  .galeria-img {
+    width: 80%;
   }
 
-  .imagen-container {
-    width: 100%;
-    margin: 20px 0;
+  .galeria-leyenda {
+    text-align: center;
+    max-width: 90%;
   }
 
-  .imagen-container img {
-    width: 100%;
-    transform: rotateX(60deg);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  .lightbox img {
+    max-height: 60vh;
   }
 
-  .imagen-container:active img {
-    transform: rotateX(0deg) scale(1.02);
-  }
-
-  .lightbox img.rotate-mobile {
-    transform: rotate(90deg);
-    width: auto !important;
-    height: 100vh !important;
-    object-fit: contain;
-  }
-
-  @keyframes scrollVertical {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10%); }
+  #lightbox-caption {
+    font-size: 0.95rem;
   }
 }

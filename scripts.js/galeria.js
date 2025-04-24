@@ -1,28 +1,28 @@
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.getElementById('closeLightbox');
+// Referencias
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const lightboxCaption = document.getElementById("lightbox-caption");
+const closeBtn = document.getElementById("closeLightbox");
 
-document.querySelectorAll('.imagen-container img').forEach(img => {
-  img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
+// Abrir imagen al hacer click
+document.querySelectorAll(".galeria-img").forEach(img => {
+  img.addEventListener("click", () => {
+    const imgSrc = img.getAttribute("src");
+    const captionText = img.getAttribute("data-caption");
 
-    // Detectar si es móvil y aplicar rotación vertical
-    if (window.innerWidth <= 768) {
-      lightboxImg.classList.add('rotate-mobile');
-    } else {
-      lightboxImg.classList.remove('rotate-mobile');
-    }
-
-    lightbox.style.display = 'flex';
+    lightboxImg.setAttribute("src", imgSrc);
+    lightboxCaption.textContent = captionText;
+    lightbox.style.display = "flex";
   });
 });
 
-closeBtn.addEventListener('click', () => {
-  lightbox.style.display = 'none';
+// Cerrar al hacer click en la X o fuera de la imagen
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
 });
 
-lightbox.addEventListener('click', (e) => {
+lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox || e.target === closeBtn) {
-    lightbox.style.display = 'none';
+    lightbox.style.display = "none";
   }
 });

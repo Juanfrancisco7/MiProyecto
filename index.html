@@ -261,26 +261,88 @@ rel="stylesheet">
 
 <hr>
 
-<!-- galeria de proyectos -->
-<section class="seccion-galeria" id="galeria"">
+
+<section class="galeria-proyectos" id="galeria">
   <h2 class="titulo-galeria">Galería de Proyectos</h2>
-  <div class="galeria-carrusel">
-    <div class="galeria">
-      <div class="imagen-container"><img src="img/111.jpg" alt="111"></div>
-      <div class="imagen-container"><img src="img/222.jpg" alt="222"></div>
-      <div class="imagen-container"><img src="img/333.jpg" alt="333"></div>
-      <div class="imagen-container"><img src="img/444.jpg" alt="444"></div>
-      <div class="imagen-container"><img src="img/555.jpg" alt="555"></div>
-      <div class="imagen-container"><img src="img/666.jpg" alt="666"></div>
-    </div>
+
+  <div class="galeria-item fila-izquierda" data-img="img/111.jpg" data-text="Este fue mi primer proyecto web profesional, 
+  desarrollado con una estructura modular utilizando TypeScript y JavaScript para la lógica interactiva. 
+  La interfaz fue construida con HTML semántico y estilos personalizados en CSS, aplicando principios
+   de diseño responsivo y buenas prácticas en accesibilidad. Representa el punto de partida en mi camino
+    como desarrollador.">
+    <img src="img/111.jpg" alt="Proyecto 1" class="galeria-img">
+    <p class="galeria-leyenda">Este fue mi primer proyecto web profesional, desarrollado con una estructura
+       modular utilizando TypeScript y JavaScript para la lógica interactiva. La interfaz fue construida
+        con HTML semántico y estilos personalizados en CSS, aplicando principios de diseño responsivo y
+         buenas prácticas en accesibilidad. Representa el punto de partida en mi camino como desarrollador.</p>
+  </div>
+
+  <div class="galeria-item fila-derecha" data-img="img/222.jpg" data-text="Este es mi proyecto personal,
+   una tienda en línea con carrito de compras y diseño responsivo. Desarrollado utilizando técnicas avanzadas
+    que se integrarán próximamente en React, con soporte para base de datos y pasarelas de pago para garantizar 
+    una experiencia de usuario optimizada y escalable.">
+    <img src="img/222.jpg" alt="Proyecto 2" class="galeria-img">
+    <p class="galeria-leyenda">Este es mi proyecto personal,
+      una tienda en línea con carrito de compras y diseño responsivo. Desarrollado utilizando técnicas avanzadas
+       que se integrarán próximamente en React, con soporte para base de datos y pasarelas de pago para garantizar 
+       una experiencia de usuario optimizada y escalable.</p>
+  </div>
+
+  <div class="galeria-item fila-izquierda" data-img="img/333.jpg" data-text="Diseño web personalizado
+   para una empresa de persianas y mosquiteros. Este proyecto fue desarrollado en colaboración con
+    mi equipo de trabajo, ofreciendo una solución a medida para el cliente con un enfoque en la 
+    funcionalidad y la estética.">
+    <img src="img/333.jpg" alt="Proyecto 3" class="galeria-img">
+    <p class="galeria-leyenda">Diseño web personalizado
+      para una empresa de persianas y mosquiteros. Este proyecto fue desarrollado en colaboración con
+       mi equipo de trabajo, ofreciendo una solución a medida para el cliente con un enfoque en la 
+       funcionalidad y la estética.</p>
+  </div>
+
+  <div class="galeria-item fila-derecha" data-img="img/444.jpg" data-text="Juego interactivo del ahorcado
+   desarrollado utilizando JavaScript puro. Este proyecto incluye una interfaz de usuario dinámica y 
+   animaciones en tiempo real, con un sistema de control de puntuación, manejo de intentos y
+    lógica avanzada para gestionar el flujo del juego. Fue diseñado para proporcionar una 
+    experiencia divertida y fluida, implementando técnicas de desarrollo orientadas a mejorar
+     la jugabilidad y la interacción del usuario.">
+    <img src="img/444.jpg" alt="Proyecto 4" class="galeria-img">
+    <p class="galeria-leyenda">Juego interactivo del ahorcado
+      desarrollado utilizando JavaScript puro. Este proyecto incluye una interfaz de usuario dinámica y 
+      animaciones en tiempo real, con un sistema de control de puntuación, manejo de intentos y
+       lógica avanzada para gestionar el flujo del juego. Fue diseñado para proporcionar una 
+       experiencia divertida y fluida, implementando técnicas de desarrollo orientadas a mejorar
+        la jugabilidad y la interacción del usuario.</p>
+  </div>
+
+  <div class="galeria-item fila-izquierda" data-img="img/555.jpg" data-text="Tienda en línea especializada en la venta de repuestos Ford,
+  desarrollada con Angular. Esta plataforma emplea componentes reutilizables y un enfoque 
+  modular para garantizar un rendimiento óptimo y una experiencia de usuario fluida.">
+    <img src="img/555.jpg" alt="Proyecto 5" class="galeria-img">
+    <p class="galeria-leyenda">Tienda en línea especializada en la venta de repuestos Ford,
+       desarrollada con Angular. Esta plataforma emplea componentes reutilizables y un enfoque 
+       modular para garantizar un rendimiento óptimo y una experiencia de usuario fluida.</p>
+  </div>
+
+  <div class="galeria-item fila-derecha" data-img="img/666.jpg" data-text="Proyecto ExOfera 3.0 en Angular. Plataforma de gestión integral con login, dashboards y múltiples módulos.">
+    <img src="img/666.jpg" alt="Proyecto 6" class="galeria-img">
+    <p class="galeria-leyenda">Proyecto ExOfera 3.0 - Plataforma integral en Angular.</p>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn" id="closeLightbox">×</span>
+    <img id="lightbox-img" src="" alt="Imagen ampliada">
+    <p id="lightbox-caption"></p>
   </div>
 </section>
 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <span class="close-btn" id="closeLightbox">×</span>
-  <img id="lightbox-img" src="" alt="imagen ampliada">
-</div>
+
+
+
+
+
+
+
 
 
 
@@ -359,16 +421,10 @@ rel="stylesheet">
 
 <!-- AOS Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1200, // Duración global
-    once: true,     // Ejecutar animaciones solo una vez
-    delay: 200,     // Retardo predeterminado
-  });
-</script>
-
 
 <!-- Archivos galeria de proyectos -->
 <script src="scripts.js/galeria.js"></script>
+
+
 </body>
 

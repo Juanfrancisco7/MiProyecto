@@ -1,55 +1,92 @@
 // Inicializa EmailJS con tu usuario
-emailjs.init("MozjG_1EF6MduDcEx");  // Reemplaza con tu User ID de EmailJS
+emailjs.init("MozjG_1EF6MduDcEx");  // Tu Public Key
 
 // Función para manejar el envío del formulario
 document.getElementById("miFormulario").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+  event.preventDefault();
 
-  // Cambiar el texto del botón para indicar que se está enviando
   const btn = document.getElementById('button');
-  btn.value = 'Enviando...';
+  btn.innerText = 'Enviando...';
 
-  
-  // Enviar el formulario a través de EmailJS
-  const serviceID = 'service_1fd29qg';  // Tu Service ID de EmailJS
-  const templateID = 'template_lhkn88h';  // Tu Template ID de EmailJS
+  const serviceID = 'service_1fd29qg';
+  const templateID = 'template_lhkn88h';
 
   emailjs.sendForm(serviceID, templateID, this)
     .then(function(response) {
       console.log("Mensaje enviado con éxito", response);
-      document.getElementById("miFormulario").reset(); // Limpiar el formulario
-      btn.value = 'Enviar mensaje';  // Restaurar el texto del botón
-      mostrarNotificacion("Su mensaje ha sido enviado con éxito. Para cualquier asunto urgente, le recomendamos comunicarse a través de otros canales, ya que esta vía puede tener tiempos de respuesta más largos.", "success");
+      document.getElementById("miFormulario").reset();
+      btn.innerText = 'Enviar mensaje';
+
+      mostrarNotificacionFormulario(
+        "Gracias por contactar a Juan Francisco. Debido a una alta demanda de mensajes, es posible que la respuesta tome un poco más de tiempo de lo habitual. Si tu consulta es urgente, te recomendamos contactarlo por otra vía disponible.",
+        "success"
+      );
     }, function(error) {
-      console.log("Error al enviar el mensaje", error);
+      console.error("Error al enviar el mensaje", error);
       alert("Error al enviar el mensaje. Inténtalo de nuevo.");
-      btn.value = 'Enviar mensaje';  // Restaurar el texto del botón
-      mostrarNotificacion("Hubo un error al enviar el mensaje. Inténtalo de nuevo.", "error");
+      btn.innerText = 'Enviar mensaje';
+
+      mostrarNotificacionFormulario("Hubo un error al enviar el mensaje. Inténtalo de nuevo.", "error");
     });
 });
 
-// Función para mostrar la notificación
-function mostrarNotificacion(mensaje, tipo) {
+// ✅ Función con notificación mejorada
+function mostrarNotificacionFormulario(mensaje, tipo) {
   const notificacion = document.createElement("div");
-  notificacion.classList.add("notificacion");
-  notificacion.innerHTML = `<p>${mensaje}</p>`;
-  if (tipo === "success") {
-    notificacion.style.backgroundColor = "#4caf50"; // Color verde para éxito
-  } else if (tipo === "error") {
-    notificacion.style.backgroundColor = "#f44336"; // Color rojo para error
-  }
+  notificacion.classList.add("notificacion-flotante");
+  notificacion.innerHTML = `
+    <div class="notificacion-icono">${tipo === "success" ? "✅" : "❌"}</div>
+    <div class="notificacion-mensaje">${mensaje}</div>
+  `;
 
-  // Añadimos la notificación al cuerpo del documento
+  // Estilos embebidos
+  Object.assign(notificacion.style, {
+    position: "fixed",
+    top: "20px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    backgroundColor: tipo === "success" ? "#28a745" : "#dc3545",
+    color: "#fff",
+    padding: "15px 25px",
+    borderRadius: "8px",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
+    fontSize: "0.95rem",
+    fontWeight: "500",
+    zIndex: "9999",
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
+    maxWidth: "90%",
+    textAlign: "center",
+    animation: "deslizarNoti 0.4s ease forwards"
+  });
+
   document.body.appendChild(notificacion);
 
-  // Eliminar la notificación después de 8 segundos
+  // Estilo animación
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes deslizarNoti {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // Eliminar notificación después de 10 segundos
   setTimeout(() => {
     notificacion.remove();
-  }, 8000); // 8 segundos para eliminar la notificación
+  }, 10000);
 
-  // Recargar la página y desplazarse al inicio
+  // Recargar página después de 10 segundos
   setTimeout(() => {
-    location.reload(); // Recargar la página después de 8 segundos
-    window.scrollTo(0, 0); // Aseguramos que la página se desplaza al principio
-  }, 8000);
+    location.reload();
+    window.scrollTo(0, 0);
+  }, 10000);
 }
