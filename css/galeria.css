@@ -1,0 +1,141 @@
+/* Estilos generales (mantén estos iguales) */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f4f6f8;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+.titulo-galeria {
+  text-align: center;
+  font-size: 2.6rem;
+  color: #1e1e2f;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-weight: 800;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Contenedor con scroll automático en escritorio */
+.galeria-carrusel {
+  overflow: hidden;
+  position: relative;
+}
+
+.galeria {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+  width: max-content;
+  animation: scrollGaleria 20s linear infinite alternate;
+}
+
+@keyframes scrollGaleria {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-30%); }
+}
+
+.imagen-container {
+  perspective: 3000px;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.imagen-container img {
+  width: 500px;
+  max-width: 90vw;
+  border-radius: 20px;
+  transform: rotateY(-75deg);
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+  box-shadow: -20px 20px 50px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.imagen-container:hover img {
+  animation-play-state: paused;
+  transform: rotateY(-15deg) scale(1.05);
+}
+
+/* Stop animación al hacer hover */
+.galeria-carrusel:hover .galeria {
+  animation-play-state: paused;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10000;
+}
+
+/* 📱 Dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .galeria-carrusel {
+    animation: scrollVertical 20s linear infinite alternate;
+    overflow: hidden;
+  }
+
+  .galeria {
+    display: block;
+    width: 100%;
+    animation: none;
+    padding: 10px;
+  }
+
+  .imagen-container {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .imagen-container img {
+    width: 100%;
+    transform: rotateX(60deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  }
+
+  .imagen-container:active img {
+    transform: rotateX(0deg) scale(1.02);
+  }
+
+  .lightbox img.rotate-mobile {
+    transform: rotate(90deg);
+    width: auto !important;
+    height: 100vh !important;
+    object-fit: contain;
+  }
+
+  @keyframes scrollVertical {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10%); }
+  }
+}
