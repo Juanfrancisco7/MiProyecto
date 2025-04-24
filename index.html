@@ -30,6 +30,13 @@ rel="stylesheet">
 <link rel="stylesheet" href="css/stylos-java-formulario.css">
 <link rel="stylesheet" href="css/not-init.css">
 <link rel="stylesheet" href="css/galeria.css">
+<link rel="stylesheet" href="css/galeria-de-fotos.css">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <!--Iconos-->
 <script src="https://kit.fontawesome.com/29bbc9f2d3.js" crossorigin="anonymous"></script>
@@ -51,41 +58,44 @@ rel="stylesheet">
 
 </head>
 <body> 
-
-<!--          cabecera               -->
-<div class="background__head__banner">
-  <header class="head">
-    <div class="head__container container">
-      </p>
-      <!-- Botón de desplegar con texto "Más" y flecha hacia abajo -->
-      <button class="toggle-button" id="toggleButton">
-        Sobre mi <i class="fa fa-chevron-down"></i>
-      </button>      
-      <ul class="head__nav nav" id="navContent">
-        <a href="#sobre-mi" class="head__list list"><li>Sobre mi</li></a>
-        <a href="#skills" class="head__list list"><li>Skills</li></a>
-        <a href="#hobbies" class="head__list list"><li>Hobbies</li></a>
-        <a href="#proyectos" class="head__list list"><li>Certificaciones</li></a>
-        <a href="#galeria" class="head__list list"><li>Galaria de proyectos</li></a>
-        <a href="#contactame" class="head__list list"><li>Contactame</li></a>
-      </ul>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/juanfrancisco7/profilecard/?igsh=cGIwYjAyZGF3OWJk" target="_blank" class="social-icon instagram">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-        </a>
-        <a href="https://www.linkedin.com/in/juan-francisco-bencomo-chacin-9aa261225/" target="_blank" class="social-icon linkedin">
-          <img src="img/linkedin.png" alt="linkedin" class="linkedin">
-        </a>
-        <a href="https://github.com/Juanfrancisco7" target="_blank" class="social-icon github">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
-        </a>
-        <a href="https://www.paypal.me/juanfchacin7" target="_blank" class="social-icon paypal">
-          <img src="img/paypal.png" alt="PayPal" class="paypal-icon">
-        </a>
+ 
+  <!--          cabecera               -->
+  <div class="background__head__banner">
+    <header class="head">
+      <div class="head__container container">
+        </p>
+        <!-- Botón de desplegar con texto "Más" y flecha hacia abajo -->
+        <button class="toggle-button" id="toggleButton">
+          <i class="fa fa-bars"></i> <!-- Icono de hamburguesa -->
+        </button>
+            
+        <ul class="head__nav nav" id="navContent">
+          <a href="#sobre-mi" class="head__list list"><li>Sobre mi</li></a>
+          <a href="#skills" class="head__list list"><li>Skills</li></a>
+          <a href="#hobbies" class="head__list list"><li>Hobbies</li></a>
+          <a href="#proyectos" class="head__list list"><li>Certificaciones</li></a>
+          <a href="#galeria" class="head__list list"><li>Galaria de proyectos</li></a>
+          <a href="#contactame" class="head__list list"><li>Contactame</li></a>
+        </ul>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/juanfrancisco7/profilecard/?igsh=cGIwYjAyZGF3OWJk" target="_blank" class="social-icon instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+          </a>
+          <a href="https://www.linkedin.com/in/juan-francisco-bencomo-chacin-9aa261225/" target="_blank" class="social-icon linkedin">
+            <img src="img/linkedin.png" alt="linkedin" class="linkedin">
+          </a>
+          <a href="https://github.com/Juanfrancisco7" target="_blank" class="social-icon github">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+          </a>
+          <a href="https://www.paypal.me/juanfchacin7" target="_blank" class="social-icon paypal">
+            <img src="img/paypal.png" alt="PayPal" class="paypal-icon">
+          </a>
+        </div>
       </div>
-    </div>
-  </header>
-</div>
+    </header>
+  </div>
+
+
 <br><br><br>
 
 <!----------banner--------------->  
@@ -99,10 +109,14 @@ rel="stylesheet">
           <br>
           <h1>Hola, soy <b>Juan Francisco</b></h1>
           <p> 
-            Soy un profesional multidisciplinario apasionado por la programación y el aprendizaje continuo. Mi enfoque autodidacta me ha permitido dominar tecnologías como <strong>HTML</strong>, <strong>CSS</strong>, y <strong>JavaScript</strong>, y seguir ampliando mis conocimientos en herramientas como <strong>AngularJS</strong> y <strong>ReactJS</strong>. 
+            Soy un profesional multidisciplinario apasionado por la programación y el aprendizaje
+             continuo. Mi enfoque autodidacta me ha permitido dominar tecnologías como <strong>HTML</strong>, 
+             <strong>CSS</strong>, y <strong>JavaScript</strong>, y seguir ampliando mis conocimientos en 
+             herramientas como <strong>AngularJS</strong> y <strong>ReactJS</strong>. 
           </p>
           <p>
-            Tengo experiencia en desarrollo de software, mantenimiento técnico y gestión administrativa, destacándome por mi capacidad de comunicación y organización de proyectos.
+            Tengo experiencia en desarrollo de software, mantenimiento técnico y gestión administrativa, 
+            destacándome por mi capacidad de comunicación y organización de proyectos.
           </p>
         </div>
         <div class="banner__fondo__img">
@@ -120,11 +134,22 @@ rel="stylesheet">
       <hr class="sobre-mi__linea">
       <div class="sobre-mi__descripcion">
         <h1>Sobre mí</h1>
-        <p class="sobre-mi__texto">Nací y crecí en Caracas, Venezuela, donde inicié mis estudios en Derecho e Informática. Ambas disciplinas me han permitido ampliar mis conocimientos y desarrollar una visión integral que fusiona tecnología y gestión. Mi formación en Informática me permitió adentrarme en la programación, mientras que Derecho me brindó una sólida comprensión de los aspectos legales y administrativos, lo que complementó mi perfil profesional de manera significativa.</p>
+        <p class="sobre-mi__texto">Nací y crecí en Caracas, Venezuela, donde inicié mis estudios
+           en Derecho e Informática. Ambas disciplinas me han permitido ampliar mis conocimientos
+            y desarrollar una visión integral que fusiona tecnología y gestión. Mi formación en
+             Informática me permitió adentrarme en la programación, mientras que Derecho me brindó
+              una sólida comprensión de los aspectos legales y administrativos, lo que complementó
+               mi perfil profesional de manera significativa.</p>
 
-        <p class="sobre-mi__texto">Actualmente estoy trabajando en un modelo de negocio virtual llamado <a href="https://www.mundojuan.com" target="_blank" class="mundojuan-link"> www.mundojuan.com</a>, una plataforma que está enfocada en ventas, tanto a nivel nacional como internacional, mediante una plataforma de pago única y segura, brindando una experiencia de compra confiable y eficiente. <strong>Te invito a visitarlo</strong>.</p>
+        <p class="sobre-mi__texto">Actualmente estoy trabajando en un modelo de negocio virtual
+           llamado <a href="https://www.mundojuan.com" target="_blank" class="mundojuan-link">
+             www.mundojuan.com</a>, una plataforma que está enfocada en ventas, tanto a nivel 
+             nacional como internacional, mediante una plataforma de pago única y segura, brindando
+              una experiencia de compra confiable y eficiente. <strong>Te invito a visitarlo</strong>.</p>
 
-        <p class="sobre-mi__texto">Fuera del ámbito profesional, soy un apasionado del motocross y el enduro, deportes que me permiten disfrutar de la adrenalina y desarrollar habilidades como la perseverancia y la toma rápida de decisiones. Actualmente, también estoy aprendiendo snowboard, una forma nueva de desafiarme y disfrutar del invierno de manera diferente.</p>
+        <p class="sobre-mi__texto">Fuera del ámbito profesional, soy un apasionado del motocross,
+          enduro y snowboard deportes que me permiten disfrutar de la adrenalina y desarrollar habilidades
+           como la perseverancia y la toma rápida de decisiones.</p>
       </div>
     </div>
   </div>
@@ -259,8 +284,7 @@ rel="stylesheet">
 </section>
 
 
-<hr>
-
+<!--Galeria de proyectos-->
 
 <section class="galeria-proyectos" id="galeria">
   <h2 class="titulo-galeria">Galería de Proyectos</h2>
@@ -337,14 +361,29 @@ rel="stylesheet">
 </section>
 
 
+<!-- Galería de fotos -->
+<section class="galeria-de-fotos" id="galeria-de-fotos">
+  <h2>Trabajos Realizados</h2>
+  <div class="swiper trabajosSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="img/p1.jpg" alt="Trabajo 1" /></div>
+      <div class="swiper-slide"><img src="img/p2.jpg" alt="Trabajo 2" /></div>
+      <div class="swiper-slide"><img src="img/p6.jpg" alt="Trabajo 2" /></div>
+      <div class="swiper-slide"><img src="img/p7.jpg" alt="Trabajo 3" /></div>
+      <div class="swiper-slide"><img src="img/p8.jpg" alt="Trabajo 4" /></div>
+      <div class="swiper-slide"><img src="img/p9.jpg" alt="Trabajo 1" /></div>
+      <div class="swiper-slide"><img src="img/p11.jpg" alt="Trabajo 3" /></div>
+      <div class="swiper-slide"><img src="img/pp1.jpg" alt="Trabajo 3" /></div>
+      <div class="swiper-slide"><img src="img/pp2.jpg" alt="Trabajo 3" /></div>
+      <div class="swiper-slide"><img src="img/pp3.jpg" alt="Trabajo 3" /></div>
+    </div>
 
-
-
-
-
-
-
-
+    <!-- Controles de navegación -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
 
 
 
@@ -418,6 +457,8 @@ rel="stylesheet">
 <!-- Arcchivo cabecera -->
 <script src="scripts.js/cabecera.js"></script>
 
+<!--Archivo para galeria de fotos-->
+<script src="scripts.js/galeriafotos.js"></script>
 
 <!-- AOS Script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -428,3 +469,61 @@ rel="stylesheet">
 
 </body>
 
+<!--
+
+      ██╗██╗   ██╗ █████╗ ███╗   ██╗
+      ██║██║   ██║██╔══██╗████╗  ██║
+      ██║██║   ██║███████║██╔██╗ ██║
+ ██   ██║██║   ██║██╔══██║██║╚██╗██║
+ ╚█████╔╝╚██████╔╝██║  ██║██║ ╚████║
+  ╚════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
+
+         ░▒▓█  JF7  █▓▒░
+
+         🟢 JUAN SYSTEM LOG - bit.ly/juanfrancisco7
+         🔐 Coded by: JF7 with 💚 and ⚡
+         ─────────────────────────────────────────
+
+[SYS] Initializing █▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+[DBG] $> sudo launch.protocol.handler --jf7
+[RUN] >>> inject(‘0xD3B7...FF14’) — running patch protocol
+[LOOP] while(⠿==⠿) { ∞ :: ∑₿ * π + ∇(ΩΔ)}
+[SEC] encrypting header @ 74.125.224.72 : ::cipher:JF7.sys🔒
+[OK!] 01100101 01111010 01100111 00110011 01101110 01010100 01110100
+[AUTH] Token :: ████-████-████-████ ✅
+
+» COMMIT LOG:
+[#] Added dynamic layer to ████.sys: ✔️
+[#] Injected fallback into protocol.v2: ✔️
+[#] Connected /api/core/jf7/kernel: OK
+[#] Rewriting DOM with ::STYLE(HYPER✦GLOW)
+
+>> SYSTEM OUTPUT <<
+
+00101101 ░▒▓█▌█▓▒░ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+10011011 - Protocol::💥explosionPoint$%#(∑)
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+
+{JF7_ENGINE} => load::core::∞::stability++
+{DEEP_FLAG} => true
+{COORDINATES} => ██.██.██.██ | 7°07′32″N 58°30′00″W
+{ACCESS LEVEL} => ✦ ULTRA ✦ [JF7]
+{VALIDATION} => PASSED
+
+// ↘ Encoded stream ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+ΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞ
+⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉ ⧉
+ΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞΞ
+
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+$ SYSTEM CHECK :: 🟩 Complete  
+$ CONNECTION :: ✔ linked to JF7_NETWORK  
+$ DEPLOYMENT :: [OK] Code integrity: 100%  
+$ REFERENCE :: JF7 // bit.ly/juanfrancisco7
+
+──────────────────────────────────────────────────────────────
+-->

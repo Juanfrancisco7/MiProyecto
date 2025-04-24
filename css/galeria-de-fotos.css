@@ -1,0 +1,42 @@
+.galeria-de-fotos {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .galeria-de-fotos h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #111;
+    border-left: 5px solid #bebfc1;
+    padding-left: 15px;
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+  }
+  
+  .swiper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #000;
+  }
+  
+  .swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  

@@ -6,4 +6,3 @@ const navContent = document.getElementById('navContent');
 toggleButton.addEventListener('click', function() {
   navContent.classList.toggle('active');
 });
-  
