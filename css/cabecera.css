@@ -1,275 +1,213 @@
-/* Fondo más corto */
+/* Fondo ultra compacto */
 .background__head__banner {
   background-color: #2c3e50;
-  padding: 1rem 0.5rem; /* Ajustamos la altura del fondo */
+  padding: 0; /* Sin padding vertical */
   position: relative;
   overflow: hidden;
-  max-height: 350px; /* Establecemos una altura máxima para que no sea tan grande */
-  display: flex; /* Aseguramos que el contenido esté alineado correctamente */
+  max-height: 80px; /* Altura mínima */
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Cabecera */
+/* Cabecera fija y mínima */
 .head {
   display: flex;
-  justify-content: space-between; /* Los elementos se distribuyen a lo largo de la línea */
+  justify-content: space-between;
   align-items: center;
-  flex-direction: row; /* Los elementos estarán en una línea */
+  flex-direction: row;
   background-color: #34495e;
   color: #fff;
-  padding: 1rem 0; /* Ajustamos el padding para hacerlo más compacto */
-  animation: fadeIn 5s ease-in-out; /* Efecto alucinante de 5 segundos */
-  width: 100%; /* Aseguramos que ocupe toda la anchura disponible */
+  padding: 0.2rem 0;
+  animation: fadeIn 5s ease-in-out;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 /* Contenedor general */
 .head__container {
   display: flex;
-  justify-content: space-between; /* Los elementos se alinean en los extremos */
-  align-items: center; /* Centrado vertical */
+  justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
   width: 100%;
-  padding: 0 3rem;
+  padding: 0 1.5rem;
   position: relative;
-  text-align: center; /* Aseguramos que todo el texto esté centrado */
+  text-align: center;
 }
 
-/* Estilo para @JuanFrancisco7 */
+/* Nombre o título */
 .head__yo {
-  font-size: 2rem; /* Reducimos el tamaño de la fuente */
+  font-size: 1.3rem;
   font-weight: bold;
   color: #ecf0f1;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para hacerlo más visible */
-  letter-spacing: 1px; /* Ajustamos el espacio entre letras */
-  animation: pulse 2s infinite alternate; /* Animación de pulso */
-  transition: transform 0.3s ease; /* Transición suave */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+  animation: pulse 2s infinite alternate;
+  transition: transform 0.3s ease;
 }
 
-.head__yo i {
-  margin-right: 10px;
-}
-
-/* Agregar un hover con un pequeño movimiento */
 .head__yo:hover {
-  transform: scale(1.1); /* Agrandar un poco cuando se pasa el mouse */
-  color: #8dc853; /* Cambiar color al pasar el mouse */
+  transform: scale(1.05);
+  color: #8dc853;
 }
 
-/* Cabecera de navegación */
+/* Navegación mínima */
 .head__nav {
   display: flex;
-  gap: 2rem;
-  list-style-type: none;
+  gap: 1.2rem;
+  list-style: none;
   justify-content: center;
-  width: auto;
-  flex-wrap: wrap; /* Asegura que se acomoden bien los elementos */
+  flex-wrap: wrap;
 }
 
 .head__list {
   color: #ecf0f1;
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem;
+  font-size: 0.9rem;
+  padding: 0.2rem;
   transition: all 0.3s ease;
 }
 
-
 .head__list:hover {
   color: #8dc853;
-  transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+  transform: scale(1.05);
 }
 
 .head__list:active {
-  transform: scale(0.9); /* Efecto de "clic" al presionar */
+  transform: scale(0.95);
 }
 
-/* Redes Sociales */
+/* Redes sociales comprimidas */
 .social-icons {
   display: flex;
-  gap: 1rem;
-  justify-content: flex-end; /* Alineamos las redes sociales a la derecha */
-  flex-wrap: wrap; /* Se acomoda bien en pantallas grandes */
+  gap: 0.5rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   width: auto;
 }
 
-.social-icon img,
-.social-icon i {
-  width: 30px;
-  height: 30px;
+.social-icon img {
+  width: 20px;
+  height: 20px;
   object-fit: contain;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
-.social-icon:hover img,
-.social-icon:hover i {
-  transform: scale(1.3); /* Zoom más llamativo */
-  color: #f39c12; /* Cambiar color al pasar el mouse */
+.social-icon:hover img {
+  transform: scale(1.15);
 }
 
-.social-icon:active img,
-.social-icon:active i {
-  transform: scale(1.1); /* Efecto de clic para las redes sociales */
+/* Botón hamburguesa compacto */
+.toggle-button {
+  background: transparent;
+  color: hsl(81, 64%, 44%);
+  border: none;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
 }
 
-/* Diseño responsivo para pantallas pequeñas */
+.toggle-button i {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.toggle-button:hover {
+  background-color: #8dc853;
+}
+
+.toggle-button:hover i {
+  transform: rotate(180deg);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .background__head__banner {
-    max-height: none; /* No limitamos la altura en pantallas pequeñas */
+    max-height: none;
   }
 
   .head__container {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
   }
 
-/* Botón de desplegar con solo texto "más" */
-.toggle-button {
-  background: transparent; /* Fondo transparente */
-  color: hsl(81, 64%, 44%); /* Color de texto verdecito */
-  border: none; /* Sin borde */
-  padding: 0.5rem 1rem; /* Espaciado cómodo alrededor del texto */
-  font-size: 1rem; /* Tamaño adecuado para el texto */
-  font-weight: bold;
-  border-radius: 20px; /* Bordes redondeados suaves */
-  cursor: pointer;
-  letter-spacing: 0.05em;
-  outline: none; /* Sin contorno al enfocar */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 50px; /* Desplazar el botón ligeramente hacia la derecha */
-  animation: move 1s ease-in-out infinite; /* Animación continua */
-}
-
-/* Animación para el movimiento constante */
-@keyframes move {
-  0% {
-    transform: translateY(0); /* Posición inicial */
-  }
-  50% {
-    transform: translateY(-3px); /* Movimiento hacia arriba */
-  }
-  100% {
-    transform: translateY(0); /* Regreso a la posición inicial */
-  }
-}
-
-/* Animación de la flecha */
-.toggle-button i {
-  font-size: 1.3rem; /* Tamaño cómodo para la flecha */
-  transition: transform 0.2s ease; /* Transición suave para la rotación */
-  animation: rotate 2s ease-in-out infinite; /* Flecha girando de manera continua */
-}
-
-/* Animación continua para la flecha */
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg); /* Flecha en su posición original */
-  }
-  50% {
-    transform: rotate(180deg); /* Flecha rotando 180 grados */
-  }
-  100% {
-    transform: rotate(360deg); /* Flecha regresando a su posición original */
-  }
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 600px) {
   .toggle-button {
-    font-size: 1rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
-    padding: 0.4rem 0.8rem; /* Reducir el tamaño del botón en pantallas pequeñas */
-  }
-}
-
---------------------------------------------------------------------------------------
-
-
-  .toggle-button:hover {
-    background-color: #8dc853;
+    display: flex;
   }
 
-  .toggle-button i {
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-  }
-
-  .toggle-button:hover i {
-    transform: rotate(180deg); /* Flecha hacia abajo girada */
-  }
-
-  /* Ocultar las secciones por defecto */
   .head__nav {
     display: none;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
     text-align: center;
     width: 100%;
   }
 
-  /* Mostrar las secciones cuando se haga click */
   .head__nav.active {
     display: flex;
   }
 
-  /* Mostrar las redes sociales */
   .social-icons {
     width: 100%;
     justify-content: center;
   }
+}
 
-  /* Mostrar botón de "Más" solo en pantallas pequeñas */
+@media (max-width: 600px) {
   .toggle-button {
-    display: flex;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
   }
 }
 
-/* Diseño para pantallas grandes (mayores a 768px) */
 @media (min-width: 769px) {
   .head__container {
-    flex-direction: row; /* Alineamos los elementos de forma horizontal */
-    justify-content: space-between; /* Los elementos están distribuidos a lo largo de la pantalla */
+    justify-content: space-between;
   }
 
-  /* Redefinir el estilo de las redes sociales para pantallas grandes */
   .social-icons {
-    flex-direction: row; /* Redes sociales en fila */
-    justify-content: flex-end; /* Alineamos las redes sociales a la derecha */
+    justify-content: flex-end;
   }
 
   .head__yo {
-    font-size: 2.5rem; /* Reducimos el tamaño aún más para pantallas grandes */
-    margin: 0 auto; /* Centrado horizontal */
+    font-size: 1.5rem;
+    margin: 0 auto;
   }
 
   .head__nav {
     display: flex;
-    gap: 2rem;
-    flex-direction: row; /* Alineamos los elementos horizontalmente */
+    flex-direction: row;
   }
 
-  /* Ocultar el botón de "Sobre mi" en pantallas grandes */
   .toggle-button {
     display: none;
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.2);
-  }
+/* Ajuste del contenido por header fijo */
+main {
+  padding-top: 70px;
 }
