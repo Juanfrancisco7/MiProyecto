@@ -12,6 +12,7 @@
 }
 
 /* Cabecera fija y mínima */
+
 .head {
   display: flex;
   justify-content: space-between;
