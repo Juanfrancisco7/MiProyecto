@@ -111,6 +111,7 @@
   transition: background 0.3s ease;
 }
 
+
 .close-btn:hover {
   background: rgba(255, 0, 0, 0.7);
 }
