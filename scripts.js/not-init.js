@@ -20,6 +20,7 @@ function mostrarMensajeDonacion() {
   `;
 
 
+  
   // Añadir el mensaje al cuerpo del documento
   document.body.appendChild(mensajeDonacion);
 
@@ -34,7 +35,7 @@ function mostrarMensajeDonacion() {
     }
   }, 1000);
 
-  
+
   // Manejar el botón "Continuar"
   const continuarBtn = document.getElementById('continuar');
   continuarBtn.addEventListener('click', () => {
