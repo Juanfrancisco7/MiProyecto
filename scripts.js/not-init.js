@@ -20,10 +20,11 @@ function mostrarMensajeDonacion() {
   `;
 
 
-  
+
   // Añadir el mensaje al cuerpo del documento
   document.body.appendChild(mensajeDonacion);
 
+  
   // Configurar el contador de 15 segundos
   let countdown = 15;
   const contadorElem = document.getElementById('contador');
