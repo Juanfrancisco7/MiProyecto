@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Verificamos si la página se ha recargado
-  
+
   if (sessionStorage.getItem('pageReloaded')) {
       mostrarNotificacion(); // Muestra la notificación inmediatamente
       sessionStorage.removeItem('pageReloaded'); // Limpiar la variable de sesión
@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sessionStorage.setItem('pageReloaded', 'true'); // Marcar para la próxima recarga
   }
 });
+
 
 // Función para mostrar la notificación
 function mostrarNotificacion() {
