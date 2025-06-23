@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
 // Función para mostrar la notificación
+
 function mostrarNotificacion() {
   // Evita notificaciones duplicadas
   if (document.querySelector(".notificacion-recarga")) return;
