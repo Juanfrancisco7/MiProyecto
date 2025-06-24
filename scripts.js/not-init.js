@@ -47,5 +47,3 @@ function mostrarMensajeDonacion() {
   sessionStorage.setItem('donationMessageShown', 'true');
 }
 */
-
-
