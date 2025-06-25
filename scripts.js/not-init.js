@@ -35,7 +35,6 @@ function mostrarMensajeDonacion() {
     }
   }, 1000);
 
-
   // Manejar el botón "Continuar"
   const continuarBtn = document.getElementById('continuar');
   continuarBtn.addEventListener('click', () => {
