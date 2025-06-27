@@ -53,6 +53,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+
 // Botón "Atrás" del navegador
 window.addEventListener("popstate", () => {
   if (lightboxAbierto) {
