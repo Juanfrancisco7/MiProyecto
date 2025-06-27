@@ -79,6 +79,7 @@ function mostrarNotificacionFormulario(mensaje, tipo) {
   `;
   document.head.appendChild(style);
 
+  
   // Eliminar notificación después de 10 segundos
   setTimeout(() => {
     notificacion.remove();
