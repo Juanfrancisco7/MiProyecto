@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     paragraphObserver.observe(paragraph);
   });
 
+  
   // Añade data-aos dinámicamente a las imágenes (si no lo haces en HTML)
   const images = document.querySelectorAll(".experiencia__container__img");
   images.forEach((img) => {
