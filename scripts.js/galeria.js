@@ -16,7 +16,6 @@ function abrirLightbox(imgSrc, captionText) {
   history.pushState({ lightbox: true }, ""); // Añadir entrada al historial
 }
 
-
 // Función para cerrar el lightbox
 function cerrarLightbox() {
   lightbox.style.display = "none";
