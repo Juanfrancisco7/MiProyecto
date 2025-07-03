@@ -214,3 +214,34 @@ main {
   padding-top: 70px;
 }
 
+
+/* Logo MundoJuan*/
+.logo__mundojuan {
+  display: flex;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.logo__mundojuan:hover {
+  transform: scale(1.08);
+}
+
+.logo__img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Animación flotante */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Responsive logo */
+@media (max-width: 768px) {
+  .logo__img {
+    height: 32px;
+  }
+}
