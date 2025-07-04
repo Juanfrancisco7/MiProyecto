@@ -1,11 +1,18 @@
-let lastScrollTop = 0;
+window.addEventListener("load", () => {
+  // Disparar animaciones una vez al cargar
+  triggerSobreMiAnimation();
+});
 
 window.addEventListener("scroll", () => {
+  triggerSobreMiAnimation();
+});
+
+function triggerSobreMiAnimation() {
   const textos = document.querySelectorAll(".sobre-mi__texto");
 
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  const scrollingDown = scrollTop > lastScrollTop;
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  const scrollingDown = scrollTop > (window.lastScrollTop || 0);
+  window.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 
   textos.forEach((texto) => {
     if (!texto) return;
@@ -22,8 +29,7 @@ window.addEventListener("scroll", () => {
         texto.classList.add("visible-up");
       }
     } else {
-      // 🔁 Si no es visible, quitar animaciones para que desaparezca
       texto.classList.remove("visible-up", "visible-down");
     }
   });
-});
+}
