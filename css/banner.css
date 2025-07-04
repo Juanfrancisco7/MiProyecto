@@ -2,8 +2,9 @@
 .banner__propiedades {
   display: flex;
   justify-content: space-between;
-  padding: 0 6rem;
-  margin-bottom: -4rem; /* Ajusta para que la sección esté más cerca de la línea */
+  align-items: center; /* Centra verticalmente */
+  padding: 3rem 6rem; /* Aumentado para centrar mejor */
+  margin-bottom: -4rem;
 }
 
 /* Descripción del banner */
@@ -11,62 +12,65 @@
   flex-direction: column;
   width: 55%;
   padding: 0;
-  justify-content: flex-start; /* Alineación desde la parte superior */
+  justify-content: center;
   gap: 2rem;
-  margin-top: -2rem; /* Ajusta la posición hacia arriba */
+  margin-top: 0; /* Quitamos el desplazamiento hacia arriba */
 }
 
 .banner__descripcion h1 {
   font-weight: 700;
-  font-size: 2.5rem; /* Aumenté el tamaño del texto */
+  font-size: 2.5rem;
   line-height: 30px;
-  margin-top: 0; /* Eliminado margen superior adicional */
-  margin-bottom: 1rem; /* Un pequeño margen para separar del siguiente texto */
-  color: #333; /* Color de texto */
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
 }
 
 .banner__descripcion p {
-  font-size: 1.25rem; /* Aumenté el tamaño de la fuente */
-  line-height: 1.6; /* Mayor espacio entre líneas para mejorar la legibilidad */
-  color: #333; /* Asegura que el color sea consistente y legible */
-  font-weight: 400; /* Ajusta el peso para mayor claridad */
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #333;
+  font-weight: 400;
 }
 
 .banner__descripcion__list {
   padding-left: 0;
   padding-right: 1rem;
   font-weight: bold;
-  color: #555; /* Color de texto para los elementos de la lista */
+  color: #555;
 }
 
 .banner__descripcion__list li {
   display: flex;
   align-items: center;
   gap: 3px;
-  font-size: 1.1rem; /* Tamaño de fuente más legible */
+  font-size: 1.1rem;
 }
 
+/* Imagen con efecto glow difuminado */
 .banner__descripcion__img {
   width: 340px;
-  border-radius: 50%; /* Ronda la imagen */
   height: 350px;
-  object-fit: cover; /* Mantiene la proporción de la imagen */
-  border: 2px solid #8dc853; /* Borde verde para la imagen */
-  transition: transform 0.3s ease; /* Efecto de zoom suave */
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #8dc853;
+  box-shadow: 0 0 40px rgba(141, 200, 83, 0.4); /* Glow suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
-/* Efecto de zoom en la imagen al pasar el mouse */
+/* Hover: más zoom y más glow */
 .banner__descripcion__img:hover {
   transform: scale(1.1);
+  box-shadow: 0 0 60px rgba(141, 200, 83, 0.7);
 }
 
-/* Estilo para el modal de imagen expandida en pantallas móviles */
+/* Active (click) */
 .banner__descripcion__img:active {
   transform: scale(1.2);
 }
 
-/* Estilos para el icono de cerrar la imagen */
+/* Estilo para el modal de imagen expandida en pantallas móviles */
 .close-modal {
   display: none;
   position: absolute;
@@ -87,19 +91,14 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    padding: 0 2rem;
+    padding: 2rem 2rem;
+    margin-bottom: 0;
   }
 
   .banner__descripcion {
     width: 100%;
     align-items: center;
     text-align: center;
-  }
-
-  .banner__descripcion__img {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto;
   }
 
   .banner__descripcion h1 {
@@ -111,23 +110,33 @@
     font-size: 1.1rem;
   }
 
-  /* Mostrar el botón de cerrar en el modal de imagen expandida */
+  .banner__descripcion__img {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    box-shadow: 0 0 30px rgba(141, 200, 83, 0.4);
+  }
+
+  .banner__descripcion__img:hover {
+    box-shadow: 0 0 40px rgba(141, 200, 83, 0.7);
+  }
+
   .banner__descripcion__img.expanded + .close-modal {
     display: block;
   }
 }
 
-/* Efecto de expansión al hacer clic en la imagen */
+/* Efecto de expansión */
 @keyframes expandImage {
   0% {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.5); /* Ajusta el tamaño máximo */
+    transform: scale(1.5);
   }
 }
 
-/* Clase para expandir la imagen */
 .banner__descripcion__img.expanded {
   animation: expandImage 0.5s ease-in-out forwards;
 }
+
