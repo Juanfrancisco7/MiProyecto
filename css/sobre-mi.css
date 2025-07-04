@@ -1,29 +1,60 @@
-/* Estilo general para la sección Sobre mí */
+/* Sección Sobre Mí */
+
+.titulo-sobre-mi {
+  font-size: 3rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  color: #333;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.titulo-sobre-mi span {
+  position: relative;
+  z-index: 1;
+}
+
+.titulo-sobre-mi span::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -5px;
+  width: 110%;
+  height: 12px;
+  background-color: #8dc853;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s ease-out;
+}
+
+.titulo-sobre-mi:hover span::after {
+  transform: scaleX(1);
+}
+
+
+
 .sobre-mi {
   position: relative;
   background-color: #f5f5f5;
   padding: 5rem 2rem;
-  margin-top: 6rem; /* Añadimos un margen superior para evitar superposición */
+  margin-top: 6rem;
 }
 
-/* Fondo para la sección sobre mí */
 .sobre-mi__fondo {
-  position: relative;
   background: #fff;
   border-radius: 15px;
   padding: 4rem 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Propiedades del contenido */
 .sobre-mi__propiedades {
-  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   text-align: center;
 }
 
-/* Línea horizontal decorativa */
 .sobre-mi__linea {
   width: 50px;
   height: 4px;
@@ -42,7 +73,6 @@
   }
 }
 
-/* Estilo para el texto */
 .sobre-mi__descripcion {
   display: flex;
   flex-direction: column;
@@ -52,18 +82,89 @@
   line-height: 1.8;
 }
 
-/* Estilo para los párrafos inicialmente ocultos */
+/* Estado inicial de todos los párrafos */
 .sobre-mi__texto {
   opacity: 0;
-  transform: translateY(20px); /* Empezamos desplazando el párrafo hacia abajo */
-  transition: opacity 3s ease-out, transform 1s ease-out;
+  transform: translateX(0);
+  transition: opacity 1.6s ease-out, transform 1.6s ease-out;
 }
 
-/* Clase visible aplicada cuando el párrafo entra en el viewport */
-.sobre-mi__texto.visible {
-  opacity: 1;
-  transform: translateY(0); /* Devuelve el párrafo a su posición original */
+/* Animación desde la izquierda */
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
+/* Animación desde la derecha */
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
+/* Entrando al hacer scroll hacia abajo */
+.sobre-mi__texto.visible-down.anim-left {
+  animation: fadeLeft 6s ease-out forwards;
+}
 
+.sobre-mi__texto.visible-down.anim-right {
+  animation: fadeRight 6s ease-out forwards;
+}
+
+/* Entrando al hacer scroll hacia arriba */
+.sobre-mi__texto.visible-up.anim-left {
+  animation: fadeLeft 6s ease-out forwards;
+}
+
+.sobre-mi__texto.visible-up.anim-right {
+  animation: fadeRight 6s ease-out forwards;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .sobre-mi {
+    padding: 4rem 1.5rem;
+  }
+
+  .sobre-mi__fondo {
+    padding: 3rem 1.5rem;
+  }
+
+  .sobre-mi__descripcion {
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+
+  @keyframes fadeLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeRight {
+    0% {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
