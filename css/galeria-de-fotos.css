@@ -1,17 +1,16 @@
 .galeria-de-fotos {
-  padding: 60px 20px;
+  padding: 40px 10px 80px; /* más padding abajo para los puntos */
   background: linear-gradient(to bottom right, #f9f9f9, #e0e0e0);
   text-align: center;
 }
 
 .galeria-de-fotos h2 {
   font-size: 2.5rem;
-  margin-bottom: 40px;
   color: #222;
   text-align: left;
   border-left: 5px solid #8dc855;
   padding-left: 15px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto 40px;
 }
 
@@ -19,6 +18,7 @@
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
 }
 
 .swiper-slide {
@@ -26,11 +26,18 @@
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+  background-color: white;
 }
 
 .swiper-slide img {
   width: 80%;
-  height: auto;
+  height: 80%;
+  object-fit: cover;
   transition: transform 0.4s ease;
 }
 
@@ -63,11 +70,26 @@
   color: #8dc855;
 }
 
+/* 🎯 Paginación limpia y separada */
 .swiper-pagination {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
+  position: relative;
+  margin-top: 40px;
   text-align: center;
 }
 
-  
+/* Bullets simples */
+.swiper-pagination-bullet {
+  background: #888;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
+.swiper-pagination-bullet-active {
+  background: #333;
+  opacity: 1;
+  transform: scale(1.2);
+}
