@@ -1,6 +1,6 @@
 /* Skills y Hobbies Fondo */
 .skills-hobbies {
-    background-color: #f4f4f4; /* Conservando el fondo anterior */
+    background-color: #f4f4f4;
     padding: 5rem 2rem;
     position: relative;
     overflow: hidden;
@@ -35,19 +35,22 @@
     width: 100%;
 }
 
-/* Lista de Skills */
+/* Lista de Skills (3 por fila) */
 .skills__nav {
-    display: flex;
-    flex-direction: column; /* Vertical para Skills */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas por fila */
+    column-gap: 2rem; /* espacio horizontal entre skills */
+    row-gap: 4rem;    /* espacio vertical entre filas */
+    justify-items: center;
     align-items: center;
-    gap: 2.5rem; /* Mayor separación entre Skills */
 }
+
 
 .skills__list {
     text-align: center;
-    font-size: 1.5rem; /* Tamaño más grande */
+    font-size: 1.5rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0; /* Inicialmente ocultos */
+    opacity: 0;
 }
 
 .skills__list:hover {
@@ -55,7 +58,7 @@
 }
 
 .skills__list i {
-    font-size: 3.5rem; /* Iconos más grandes */
+    font-size: 3.5rem;
     color: #8dc855;
     margin-bottom: 1rem;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -67,25 +70,27 @@
 }
 
 .skills__list p {
-    font-size: 1.2rem; /* Texto más grande */
+    font-size: 1.2rem;
     font-weight: 500;
     color: #464646;
 }
 
-/* Lista de Hobbies */
+/* Lista de Hobbies (3 por fila) */
 .hobbies__nav {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas por fila */
-    gap: 2rem; /* Separación entre Hobbies */
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem; /* separación horizontal */
+    row-gap: 4rem;     /* separación vertical mejorada entre filas */
     justify-items: center;
     align-items: center;
 }
 
+
 .hobbies__list {
     text-align: center;
-    font-size: 1.5rem; /* Tamaño más grande */
+    font-size: 1.5rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0; /* Inicialmente ocultos */
+    opacity: 0;
 }
 
 .hobbies__list:hover {
@@ -93,7 +98,7 @@
 }
 
 .hobbies__list i {
-    font-size: 3.5rem; /* Iconos más grandes */
+    font-size: 3.5rem;
     color: #8dc855;
     margin-bottom: 1rem;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -105,23 +110,32 @@
 }
 
 .hobbies__list p {
-    font-size: 1.2rem; /* Texto más grande */
+    font-size: 1.2rem;
     font-weight: 500;
     color: #464646;
 }
 
-/* Responsividad para pantallas pequeñas */
-@media (max-width: 768px) {
-    /* Hobbies: Mostrar en dos filas de tres */
+/* RESPONSIVE para pantallas pequeñas */
+@media (max-width: 1024px) {
+    .skills__nav,
     .hobbies__nav {
-        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
+        grid-template-columns: repeat(2, 1fr);
     }
-    
-    .skills__list i, .hobbies__list i {
-        font-size: 3rem; /* Ajustar tamaño de iconos */
+}
+
+@media (max-width: 600px) {
+    .skills__nav,
+    .hobbies__nav {
+        grid-template-columns: 1fr;
     }
 
-    .skills__list p, .hobbies__list p {
-        font-size: 1rem; /* Ajustar tamaño del texto */
+    .skills__list i,
+    .hobbies__list i {
+        font-size: 3rem;
+    }
+
+    .skills__list p,
+    .hobbies__list p {
+        font-size: 1rem;
     }
 }
