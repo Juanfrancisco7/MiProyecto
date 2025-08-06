@@ -16,6 +16,7 @@ function mostrarNotificacion() {
   // Evita notificaciones duplicadas
   if (document.querySelector(".notificacion-recarga")) return;
 
+  
   const notificacion = document.createElement("div");
   notificacion.classList.add("notificacion-recarga");
   notificacion.innerHTML = `
