@@ -16,13 +16,14 @@ function mostrarNotificacion() {
   // Evita notificaciones duplicadas
   if (document.querySelector(".notificacion-recarga")) return;
 
-  
+
   const notificacion = document.createElement("div");
   notificacion.classList.add("notificacion-recarga");
   notificacion.innerHTML = `
       <p>¿Ya visitaste <a href="https://www.mundojuan.com" target="_blank">MUNDOJUAN</a>? 
       Cuéntame tu experiencia <a href="https://www.mundojuan.com" target="_blank">aquí</a></p>
   `;
+  
   
   // Añadir la notificación al cuerpo del documento
   document.body.appendChild(notificacion);
