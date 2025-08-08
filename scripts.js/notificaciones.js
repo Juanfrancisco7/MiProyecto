@@ -24,7 +24,6 @@ function mostrarNotificacion() {
       Cuéntame tu experiencia <a href="https://www.mundojuan.com" target="_blank">aquí</a></p>
   `;
   
-  
   // Añadir la notificación al cuerpo del documento
   document.body.appendChild(notificacion);
 
