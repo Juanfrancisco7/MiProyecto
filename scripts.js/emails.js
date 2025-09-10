@@ -76,7 +76,8 @@ function mostrarNotificacionFormulario(mensaje, tipo) {
         transform: translate(-50%, 0);
       }
     }
-  `;
+  `
+
   document.head.appendChild(style);
 
   
