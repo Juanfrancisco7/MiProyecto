@@ -1,4 +1,5 @@
 // Botón de menú hamburguesa
+
 const toggleButton = document.getElementById('toggleButton');
 const navContent = document.getElementById('navContent');
 
