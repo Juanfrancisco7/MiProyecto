@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>@JuanFrancisco7</title>
+<meta name="description" content="Portafolio de Juan Francisco Bencomo Chacín. Desarrollador Full-Stack (JavaScript, Python, React, Angular & SQL). Proyectos, certificaciones y contacto.">
+<meta property="og:title" content="Portafolio | Juan Francisco (@JuanFrancisco7)">
+<meta property="og:description" content="Desarrollador Full-Stack creando soluciones web eficientes. Proyectos, certificaciones y contacto.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/Logo_JF7.png">
+<meta property="og:url" content="https://www.mundojuan.com">
 <link rel="icon" href="img/logotipo2.png" type="image/png">
 
-<!--Font-->
+<!-- Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!--Archivos CSS-->
+<!-- Archivos CSS -->
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/head.css">
@@ -24,37 +30,30 @@ rel="stylesheet">
 <link rel="stylesheet" href="css/footer.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/cabecera.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 <link rel="stylesheet" href="css/stylos-java-formulario.css">
 <link rel="stylesheet" href="css/not-init.css">
 <link rel="stylesheet" href="css/galeria.css">
 <link rel="stylesheet" href="css/galeria-de-fotos.css">
-
-<!-- Swiper CSS -->
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Google Tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T2NZ5W17Z8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);} 
+  gtag('js', new Date());
+  gtag('config', 'G-T2NZ5W17Z8');
+  </script>
 
-<!--Iconos-->
-<script src="https://kit.fontawesome.com/29bbc9f2d3.js" crossorigin="anonymous"></script>
-<head>
- <!-- Google Tag -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-T2NZ5W17Z8"></script>
- <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
-   gtag('config', 'G-T2NZ5W17Z8');
- </script>
- <script type="text/javascript"
- src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script type="text/javascript">
- emailjs.init('MozjG_1EF6MduDcEx')
-</script>
-
+<!-- EmailJS -->
+<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.emailjs) { emailjs.init('MozjG_1EF6MduDcEx'); }
+  });
+  </script>
 </head>
 
 <body> 
@@ -64,7 +63,7 @@ rel="stylesheet">
     <div class="head__container container">
       
       <!-- Logo -->
-      <a href="https://linktr.ee/juanfrancisco7" class="logo_JF7">
+      <a href="https://linktr.ee/juanfrancisco7" class="logo_JF7" target="_blank" rel="noopener noreferrer">
         <img src="img/Logo_JF7.png" alt="@JUANFRANCISCO7" class="logo__img" />
       </a>
 
@@ -81,10 +80,10 @@ rel="stylesheet">
       <!-- Botón hamburguesa + Redes sociales a la derecha -->
       <div class="header__right">
         <div class="social-icons">
-          <a href="https://github.com/Juanfrancisco7" target="_blank" class="social-icon github">
+          <a href="https://github.com/Juanfrancisco7" target="_blank" rel="noopener noreferrer" class="social-icon github">
             <img src="img/githubiconoco.png" alt="GitHub" />
           </a>
-          <a href="https://www.linkedin.com/in/juan-francisco-bencomo-chacin-9aa261225/" target="_blank" class="social-icon linkedin">
+          <a href="https://www.linkedin.com/in/juan-francisco-bencomo-chacin-9aa261225/" target="_blank" rel="noopener noreferrer" class="social-icon linkedin">
             <img src="img/linkidin.png" alt="LinkedIn" />
           </a>
         </div>
@@ -138,7 +137,7 @@ rel="stylesheet">
 
       <p class="sobre-mi__texto anim-right">
   Construyo soluciones digitales complejas, como mi proyecto
-   <a href="https://www.mundojuan.com" target="_blank" class="mundojuan-link">www.mundojuan.com</a>, 
+   <a href="https://www.mundojuan.com" target="_blank" rel="noopener noreferrer" class="mundojuan-link">www.mundojuan.com</a>, 
   con la misma precisión y energía que le dedico al motocross y al snowboard.
 </p>
 
@@ -295,34 +294,34 @@ rel="stylesheet">
 
     <div class="experiencia__container">
       <div class="experiencia__row">
-        <img src="img/1.jpg" alt="Imagen 1" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000">
-        <img src="img/2.jpg" alt="Imagen 2" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100">
-        <img src="img/3.jpg" alt="Imagen 3" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
+        <img src="img/1.jpg" alt="Imagen 1" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" loading="lazy">
+        <img src="img/2.jpg" alt="Imagen 2" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100" loading="lazy">
+        <img src="img/3.jpg" alt="Imagen 3" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200" loading="lazy">
       </div>
       <div class="experiencia__row">
-        <img src="img/4.jpg" alt="Imagen 4" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="300">
-        <img src="img/5.jpg" alt="Imagen 5" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="400">
-        <img src="img/6.jpg" alt="Imagen 6" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="500">
+        <img src="img/4.jpg" alt="Imagen 4" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="300" loading="lazy">
+        <img src="img/5.jpg" alt="Imagen 5" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="400" loading="lazy">
+        <img src="img/6.jpg" alt="Imagen 6" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="500" loading="lazy">
       </div>
       <div class="experiencia__row">
-        <img src="img/7.jpg" alt="Imagen 7" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="600">
-        <img src="img/8.jpg" alt="Imagen 8" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="700">
-        <img src="img/9.jpg" alt="Imagen 9" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="800">
+        <img src="img/7.jpg" alt="Imagen 7" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="600" loading="lazy">
+        <img src="img/8.jpg" alt="Imagen 8" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="700" loading="lazy">
+        <img src="img/9.jpg" alt="Imagen 9" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="800" loading="lazy">
       </div>
       <div class="experiencia__row">
-        <img src="img/10.jpg" alt="Imagen 10" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="900">
-        <img src="img/18.png" alt="Imagen 11" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000">
-        <img src="img/11.jpg" alt="Imagen 12" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1100">
+        <img src="img/10.jpg" alt="Imagen 10" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="900" loading="lazy">
+        <img src="img/18.png" alt="Imagen 11" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" loading="lazy">
+        <img src="img/11.jpg" alt="Imagen 12" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1100" loading="lazy">
       </div>
       <div class="experiencia__row">
-        <img src="img/12.jpg" alt="Imagen 10" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="900">
-        <img src="img/13.jpg" alt="Imagen 11" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000">
-        <img src="img/14.jpg" alt="Imagen 12" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1100">
+        <img src="img/12.jpg" alt="Imagen 10" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="900" loading="lazy">
+        <img src="img/13.jpg" alt="Imagen 11" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1000" loading="lazy">
+        <img src="img/14.jpg" alt="Imagen 12" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1100" loading="lazy">
       </div>
       <div class="experiencia__row">
-        <img src="img/15.jpg" alt="Imagen 12" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1100">
-        <img src="img/16.jpg" alt="Imagen 12" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1100">
-        <img src="img/17.jpg" alt="Imagen 12" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1100">
+        <img src="img/15.jpg" alt="Imagen 12" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1100" loading="lazy">
+        <img src="img/16.jpg" alt="Imagen 12" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1100" loading="lazy">
+        <img src="img/17.jpg" alt="Imagen 12" class="experiencia__container__img" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="1100" loading="lazy">
 
       </div>
     </div>
@@ -333,14 +332,14 @@ rel="stylesheet">
 <!--Proyectos-->
 
 <section class="galeria-proyectos" id="proyectos">
-  <h2 class="titulo-galeria">Proyectos</h2>
+<h2 class="titulo-galeria">Proyectos</h2>
 
   <div class="galeria-item fila-izquierda" data-img="img/111.jpg" data-text="Este fue mi primer proyecto web profesional, 
   desarrollado con una estructura modular utilizando TypeScript y JavaScript para la lógica interactiva. 
   La interfaz fue construida con HTML semántico y estilos personalizados en CSS, aplicando principios
    de diseño responsivo y buenas prácticas en accesibilidad. Representa el punto de partida en mi camino
     como desarrollador.">
-    <img src="img/111.jpg" alt="Proyecto 1" class="galeria-img">
+    <img src="img/111.jpg" alt="Proyecto 1" class="galeria-img" loading="lazy">
     <p class="galeria-leyenda">Este fue mi primer proyecto web profesional, desarrollado con una estructura
        modular utilizando TypeScript y JavaScript para la lógica interactiva. La interfaz fue construida
         con HTML semántico y estilos personalizados en CSS, aplicando principios de diseño responsivo y
@@ -351,7 +350,7 @@ rel="stylesheet">
    una tienda en línea con carrito de compras y diseño responsivo. Desarrollado utilizando técnicas avanzadas
     que se integrarán próximamente en React, con soporte para base de datos y pasarelas de pago para garantizar 
     una experiencia de usuario optimizada y escalable.">
-    <img src="img/222.jpg" alt="Proyecto 2" class="galeria-img">
+    <img src="img/222.jpg" alt="Proyecto 2" class="galeria-img" loading="lazy">
     <p class="galeria-leyenda">Este es mi proyecto personal,
       una tienda en línea con carrito de compras y diseño responsivo. Desarrollado utilizando técnicas avanzadas
        que se integrarán próximamente en React, con soporte para base de datos y pasarelas de pago para garantizar 
@@ -362,7 +361,7 @@ rel="stylesheet">
    para una empresa de persianas y mosquiteros. Este proyecto fue desarrollado en colaboración con
     mi equipo de trabajo, ofreciendo una solución a medida para el cliente con un enfoque en la 
     funcionalidad y la estética.">
-    <img src="img/333.jpg" alt="Proyecto 3" class="galeria-img">
+    <img src="img/333.jpg" alt="Proyecto 3" class="galeria-img" loading="lazy">
     <p class="galeria-leyenda">Diseño web personalizado
       para una empresa de persianas y mosquiteros. Este proyecto fue desarrollado en colaboración con
        mi equipo de trabajo, ofreciendo una solución a medida para el cliente con un enfoque en la 
@@ -375,7 +374,7 @@ rel="stylesheet">
     lógica avanzada para gestionar el flujo del juego. Fue diseñado para proporcionar una 
     experiencia divertida y fluida, implementando técnicas de desarrollo orientadas a mejorar
      la jugabilidad y la interacción del usuario.">
-    <img src="img/444.jpg" alt="Proyecto 4" class="galeria-img">
+    <img src="img/444.jpg" alt="Proyecto 4" class="galeria-img" loading="lazy">
     <p class="galeria-leyenda">Juego interactivo del ahorcado
       desarrollado utilizando JavaScript puro. Este proyecto incluye una interfaz de usuario dinámica y 
       animaciones en tiempo real, con un sistema de control de puntuación, manejo de intentos y
@@ -387,14 +386,14 @@ rel="stylesheet">
   <div class="galeria-item fila-izquierda" data-img="img/555.jpg" data-text="Tienda en línea especializada en la venta de repuestos Ford,
   desarrollada con Angular. Esta plataforma emplea componentes reutilizables y un enfoque 
   modular para garantizar un rendimiento óptimo y una experiencia de usuario fluida.">
-    <img src="img/555.jpg" alt="Proyecto 5" class="galeria-img">
+    <img src="img/555.jpg" alt="Proyecto 5" class="galeria-img" loading="lazy">
     <p class="galeria-leyenda">Tienda en línea especializada en la venta de repuestos Ford,
        desarrollada con Angular. Esta plataforma emplea componentes reutilizables y un enfoque 
        modular para garantizar un rendimiento óptimo y una experiencia de usuario fluida.</p>
   </div>
 
   <div class="galeria-item fila-derecha" data-img="img/666.jpg" data-text="Proyecto ExOfera 3.0 en Angular. Plataforma de gestión integral con login, dashboards y múltiples módulos.">
-    <img src="img/666.jpg" alt="Proyecto 6" class="galeria-img">
+    <img src="img/666.jpg" alt="Proyecto 6" class="galeria-img" loading="lazy">
     <p class="galeria-leyenda">Proyecto ExOfera 3.0 - Plataforma integral en Angular.</p>
   </div>
 
@@ -403,7 +402,7 @@ rel="stylesheet">
    componentes de React para manejar la lógica de la calculadora y actualizar la interfaz de forma dinámica
     cada vez que el usuario interactúa con los botones. Este proyecto demuestra el uso de estados
      y el manejo de eventos en React para crear una aplicación interactiva y funcional.">
-    <img src="img/777.png" alt="Proyecto 7" class="galeria-img">
+    <img src="img/777.png" alt="Proyecto 7" class="galeria-img" loading="lazy">
     <p class="galeria-leyenda">Este fue un proyecto de calculadora creado con React, su función principal es 
       realizar operaciones matemáticas básicas como suma, resta, multiplicación y división. Utiliza los
        componentes de React para manejar la lógica de la calculadora y actualizar la interfaz de forma dinámica
@@ -415,7 +414,7 @@ rel="stylesheet">
   desarrollado con HTML, CSS y JavaScript puro, este proyecto combina imágenes, audio y video para crear una experiencia
    dinámica y envolvente. Todo está organizado en pantallas y estilos separados, sin usar frameworks, lo que resalta el
     control total sobre cada parte del juego.">
-    <img src="img/888.png" alt="Proyecto 6" class="galeria-img">
+    <img src="img/888.png" alt="Proyecto 6" class="galeria-img" loading="lazy">
     <p class="galeria-leyenda">Juego interactivo inspirado en Dragon Ball Z 
       desarrollado con HTML, CSS y JavaScript puro, este proyecto combina imágenes, audio y video para crear una experiencia
        dinámica y envolvente. Todo está organizado en pantallas y estilos separados, sin usar frameworks, lo que resalta el
@@ -426,7 +425,7 @@ rel="stylesheet">
    una base de datos SQLite con una aplicación web creada en Node.js usando Express. A través de un servidor 
   local, se consulta la base de datos y se muestra un listado de usuarios en el navegador. Es una solución ligera y eficiente 
   para aprender a integrar back-end y front-end de forma práctica.">
-    <img src="img/999.png" alt="Proyecto 7" class="galeria-img">
+    <img src="img/999.png" alt="Proyecto 7" class="galeria-img" loading="lazy">
     <p class="galeria-leyenda">Proyecto de listado de usuarios con Node.js y SQLite, este proyecto conecta
       una base de datos SQLite con una aplicación web creada en Node.js usando Express. A través de un servidor 
      local, se consulta la base de datos y se muestra un listado de usuarios en el navegador. Es una solución ligera y eficiente 
@@ -434,14 +433,14 @@ rel="stylesheet">
   </div>
 
   <div class="galeria-item fila-derecha" data-img="img/101010.png" data-text="Pagina web simple en proceso de creacion para un cliente.">
-    <img src="img/101010.png" alt="Proyecto 6" class="galeria-img">
+    <img src="img/101010.png" alt="Proyecto 6" class="galeria-img" loading="lazy">
     <p class="galeria-leyenda">Pagina web simple en proceso de creacion para un cliente..</p>
   </div>
 
   <div class="galeria-item fila-izquierda" data-img="img/111111.png" data-text="Página web desarrollada para un cliente con el 
   objetivo de transformar su carta física en un formato digital, accesible mediante un código QR. Este proyecto moderniza la 
   presentación del contenido, mejorando la experiencia del usuario y adaptándose a las nuevas tendencias tecnológicas en el sector comercial.">
-   <img src="img/111111.png" alt="Proyecto 7" class="galeria-img">
+   <img src="img/111111.png" alt="Proyecto 7" class="galeria-img" loading="lazy">
    <p class="galeria-leyenda">Página web desarrollada para un cliente con el 
     objetivo de transformar su carta física en un formato digital, accesible mediante un código QR. Este proyecto moderniza la 
     presentación del contenido, mejorando la experiencia del usuario y adaptándose a las nuevas tendencias tecnológicas en el sector comercial.</p>
@@ -466,63 +465,63 @@ rel="stylesheet">
 
       <div class="swiper-slide">
         <a href="img/p1.jpg" data-fslightbox="galeria">
-          <img src="img/p1.jpg" alt="Trabajo 1" />
+          <img src="img/p1.jpg" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
       <div class="swiper-slide">
         <a href="img/g1c.gif" data-fslightbox="galeria">
-          <img src="img/g1c.gif" alt="Trabajo 1" />
+          <img src="img/g1c.gif" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
  <div class="swiper-slide">
         <a href="img/a1.jpg" data-fslightbox="galeria">
-          <img src="img/a1.jpg" alt="Trabajo 1" />
+          <img src="img/a1.jpg" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
        <div class="swiper-slide">
         <a href="img/a3.gif" data-fslightbox="galeria">
-          <img src="img/a3.gif" alt="Trabajo 1" />
+          <img src="img/a3.gif" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
        <div class="swiper-slide">
         <a href="img/a4.jpg" data-fslightbox="galeria">
-          <img src="img/a4.jpg" alt="Trabajo 1" />
+          <img src="img/a4.jpg" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
        <div class="swiper-slide">
         <a href="img/a6.gif" data-fslightbox="galeria">
-          <img src="img/a6.gif" alt="Trabajo 1" />
+          <img src="img/a6.gif" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
        <div class="swiper-slide">
         <a href="img/a5.jpg" data-fslightbox="galeria">
-          <img src="img/a5.jpg" alt="Trabajo 1" />
+          <img src="img/a5.jpg" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
        <div class="swiper-slide">
         <a href="img/a7.gif" data-fslightbox="galeria">
-          <img src="img/a7.gif" alt="Trabajo 1" />
+          <img src="img/a7.gif" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
        <div class="swiper-slide">
         <a href="img/a8.jpg" data-fslightbox="galeria">
-          <img src="img/a8.jpg" alt="Trabajo 1" />
+          <img src="img/a8.jpg" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
@@ -537,14 +536,14 @@ rel="stylesheet">
  -->
           <div class="swiper-slide">
         <a href="img/g5c.gif" data-fslightbox="galeria">
-          <img src="img/g5c.gif" alt="Trabajo 1" />
+          <img src="img/g5c.gif" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
        <div class="swiper-slide">
         <a href="img/a10.jpg" data-fslightbox="galeria">
-          <img src="img/a10.jpg" alt="Trabajo 1" />
+          <img src="img/a10.jpg" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
@@ -560,7 +559,7 @@ rel="stylesheet">
 
   <div class="swiper-slide">
         <a href="img/g3.gif" data-fslightbox="galeria">
-          <img src="img/g3.gif" alt="Trabajo 1" />
+          <img src="img/g3.gif" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
@@ -576,21 +575,21 @@ rel="stylesheet">
 
        <div class="swiper-slide">
         <a href="img/a13.jpg" data-fslightbox="galeria">
-          <img src="img/a13.jpg" alt="Trabajo 1" />
+          <img src="img/a13.jpg" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
         <div class="swiper-slide">
         <a href="img/g4c.gif" data-fslightbox="galeria">
-          <img src="img/g4c.gif" alt="Trabajo 1" />
+          <img src="img/g4c.gif" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
        <div class="swiper-slide">
         <a href="img/a14.jpg" data-fslightbox="galeria">
-          <img src="img/a14.jpg" alt="Trabajo 1" />
+          <img src="img/a14.jpg" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
@@ -620,14 +619,14 @@ rel="stylesheet">
 
        <div class="swiper-slide">
         <a href="img/a18.jpg" data-fslightbox="galeria">
-          <img src="img/a18.jpg" alt="Trabajo 1" />
+          <img src="img/a18.jpg" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
        <div class="swiper-slide">
         <a href="img/a19.jpg" data-fslightbox="galeria">
-          <img src="img/a19.jpg" alt="Trabajo 1" />
+          <img src="img/a19.jpg" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
@@ -635,14 +634,14 @@ rel="stylesheet">
 
       <div class="swiper-slide">
         <a href="img/p2.jpg" data-fslightbox="galeria">
-          <img src="img/p2.jpg" alt="Trabajo 2" />
+          <img src="img/p2.jpg" alt="Trabajo 2" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
       <div class="swiper-slide">
         <a href="img/p6.jpg" data-fslightbox="galeria">
-          <img src="img/p6.jpg" alt="Trabajo 2" />
+          <img src="img/p6.jpg" alt="Trabajo 2" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
@@ -650,14 +649,14 @@ rel="stylesheet">
 
         <div class="swiper-slide">
         <a href="img/g8.gif" data-fslightbox="galeria">
-          <img src="img/g8.gif" alt="Trabajo 1" />
+          <img src="img/g8.gif" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
       <div class="swiper-slide">
         <a href="img/p7.jpg" data-fslightbox="galeria">
-          <img src="img/p7.jpg" alt="Trabajo 3" />
+          <img src="img/p7.jpg" alt="Trabajo 3" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
@@ -672,28 +671,28 @@ rel="stylesheet">
     -->
         <div class="swiper-slide">
         <a href="img/g9.gif" data-fslightbox="galeria">
-          <img src="img/g9.gif" alt="Trabajo 1" />
+          <img src="img/g9.gif" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
       <div class="swiper-slide">
         <a href="img/p9.jpg" data-fslightbox="galeria">
-          <img src="img/p9.jpg" alt="Trabajo 1" />
+          <img src="img/p9.jpg" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
           <div class="swiper-slide">
         <a href="img/g2c.gif" data-fslightbox="galeria">
-          <img src="img/g2c.gif" alt="Trabajo 1" />
+          <img src="img/g2c.gif" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
 
       <div class="swiper-slide">
         <a href="img/p11.jpg" data-fslightbox="galeria">
-          <img src="img/p11.jpg" alt="Trabajo 3" />
+          <img src="img/p11.jpg" alt="Trabajo 3" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
@@ -708,7 +707,7 @@ rel="stylesheet">
 
         <div class="swiper-slide">
         <a href="img/g10.gif" data-fslightbox="galeria">
-          <img src="img/g10.gif" alt="Trabajo 1" />
+          <img src="img/g10.gif" alt="Trabajo 1" loading="lazy" />
           <div class="overlay"><i class="fa-solid fa-magnifying-glass"></i></div>
         </a>
       </div>
@@ -746,11 +745,11 @@ rel="stylesheet">
 </section>
 
 <!-- CDN para Font Awesome (íconos lupa) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<!-- Font Awesome v6 ya incluido en <head> -->
 
 <!-- CDN para fslightbox (fullscreen zoom) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fslightbox/index.css" />
-<script src="https://cdn.jsdelivr.net/npm/fslightbox/index.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/fslightbox/index.js"></script>
 
 <br><br><br><br><br><br><br><br>
 
@@ -795,7 +794,8 @@ rel="stylesheet">
           <!-- Checkbox Aceptación -->
 
           <div class="form-group">
-            <input type="checkbox" required> Acepto la política de privacidad
+            <input type="checkbox" id="acepto_politica" required>
+            <label for="acepto_politica">Acepto la política de privacidad</label>
           </div>
         <br>
 
@@ -818,43 +818,44 @@ rel="stylesheet">
 
 <!-- Archivos JavaScript para las animaciones -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 <!-- Archivo para EmailJS -->
 
-<script src="scripts.js/emails.js"></script>
+<script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script defer src="scripts.js/emails.js"></script>
 
 <!-- Archivo para las notificaciones y recarga -->
 
-<script src="scripts.js/notificaciones.js"></script>
+<script defer src="scripts.js/notificaciones.js"></script>
 
 <!-- Archivo para la inicialización de AOS -->
 
-<script src="scripts.js/aos-init.js"></script>
+<script defer src="scripts.js/aos-init.js"></script>
 
 <!-- Archivo para inicio -->
 
-<script src="scripts.js/not-init.js"></script>
+<script defer src="scripts.js/not-init.js"></script>
 
 <!-- Arcchivo cabecera -->
 
-<script src="scripts.js/cabecera.js"></script>
+<script defer src="scripts.js/cabecera.js"></script>
 
 <!--Archivo para galeria de fotos-->
 
-<script src="scripts.js/galeriafotos.js"></script>
+<script defer src="scripts.js/galeriafotos.js"></script>
 
 <!-- AOS Script -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!-- AOS ya cargado arriba -->
 
 <!-- Archivos galeria de proyectos -->
 
-<script src="scripts.js/galeria.js"></script>
+<script defer src="scripts.js/galeria.js"></script>
 
 <!-- Archivos Sobre mi transiciones -->
 
-<script src="scripts.js/sobre-mi.js"></script>
+<script defer src="scripts.js/sobre-mi.js"></script>
 
 </body>
 
